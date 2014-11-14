@@ -3,6 +3,7 @@ public class Word {
 	String wordContent;
 	int length, difficulty, category;
 	String type, explanation;
+	String baseType;
 	/*
 	 * 
 	 *
@@ -20,9 +21,28 @@ public class Word {
 			this.difficulty=2;
 		else
 			this.difficulty=3;
+		switch(category) {
+		case 1: baseType="GRE";
+				break;
+		case 2: baseType="GRE_HF";
+		break;
+		case 3: baseType="SAT1";
+		break;
+		case 4: baseType="SAT2";
+		break;
+		case 5: baseType="TOEFL";
+		break;
+		case 6: baseType="TOEFL_HF";
+		break;
+		case 7: baseType="Trial";
+		break;
+		default: baseType="None";
+		}
 	}
 	public String toString(){
-		string
+		String myString="";
+		myString = wordContent + "," + length + ","  + difficulty + "," + baseType + "," + type + "," + explanation; 
+		return myString;
 	}
 
 	
