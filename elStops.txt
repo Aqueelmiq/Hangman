@@ -1,0 +1,74 @@
+15784,15784,"Harlem/Lake Green Line Station",41.88675931,-87.80319483,0,,1
+30263,,"Oak Park-Green",41.886988,-87.793783,0,41350,0
+40610,,"Ridgeland",41.887159,-87.783661,1,,0
+41260,,"Austin-Green",41.887293,-87.774135,1,,0
+40280,,"Central-Green",41.887389,-87.76565,1,,1
+3868,3868,"Laramie & Lake-Green",41.88709696,-87.75526657,0,,1
+40480,,"Cicero-Green",41.886519,-87.744698,1,,1
+30005,,"Pulaski-Green",41.885412,-87.725404,0,40030,1
+41070,,"Kedzie-Green",41.884321,-87.706155,1,,1
+30266,,"California-Green",41.88422,-87.696234,0,41360,1
+3245,3245,"Ashland/63rd Green Line Station",41.778812,-87.663683,0,,1
+41160,,"Clinton-Green",41.885678,-87.641782,1,,1
+40380,,"Clark/Lake-Green",41.885737,-87.630886,1,,1
+40260,,"State/Lake-Green",41.88574,-87.627835,1,,0
+40200,,"Randolph/Wabash-Green",41.884431,-87.626149,1,,0
+30123,,"Madison/Wabash-Green",41.882023,-87.626098,0,40640,0
+30131,,"Adams/Wabash-Green",41.879507,-87.626037,0,40680,0
+16140,16140,"Roosevelt Orange/Red/Green Line Station",41.86755162,-87.62666395,0,,1
+30213,,"35-Bronzeville-IIT-Green",41.831677,-87.625826,0,41120,1
+1554,1554,"Indiana Green Line Station",41.82194376,-87.62143777,0,,1
+8004,8004,"43rd Green Line Station",41.81666528,-87.61897865,0,,1
+7154,7154,"47th Green Line Station",41.809406,-87.61877531,0,,1
+1542,1542,"51st Green Line Station",41.80208265,-87.61855914,0,,1
+10582,10582,"Garfield Green Line Station",41.79481598,-87.61831007,0,,1
+1225,1225,"Fullerton Red/Brown/Purple Line Station",41.92545583,-87.65277085,0,,1
+2435,2435,"69th Red Line Station",41.76882239,-87.62530655,0,,1
+30227,,"Jarvis-Red",42.015876,-87.669092,0,41190,0
+40100,,"Morse-Red",42.008362,-87.665909,1,,0
+1027,1027,"Sheridan & Loyola-Red",42.001423,-87.66086,0,,1
+1033,1033,"Sheridan & Granville-Red",41.994419,-87.655598,0,,1
+1035,1035,"Sheridan & Thorndale-Red",41.989916,-87.655459,0,,1
+11468,11468,"Bryn Mawr Red Line Station",41.983604,-87.659127,0,,1
+1041,1041,"Sheridan & Berwyn-Red ",41.97801194,-87.65512909,0,,1
+1044,1044,"Sheridan & Argyle-Red",41.97312,-87.655001,0,,1
+3770,3770,"Lawrence Red Line Station",41.968986,-87.6586045,0,,1
+1053,1053,"4242 N Sheridan-Red",41.959341,-87.654718,0,,1
+12543,12543,"Addison Red Line Station",41.94719704,-87.65363481,0,,1
+1154,1154,"Sheridan & Belmont-Red",41.94002509,-87.63950114,0,,1
+1225,1225,"Fullerton Red/Brown/Purple Line Station",41.92545583,-87.65277085,0,,1
+913,913,"North Avenue & Clybourn/Halsted-Red",41.91083785,-87.64897589,0,,1
+30121,,"Clark/Division-Red",41.90392,-87.631412,0,40630,0
+30279,,"Chicago-Red",41.896671,-87.628176,0,41450,1
+30064,,"Grand-Red",41.891665,-87.628021,0,40330,0
+40260,,"State/Lake-Red",41.88574,-87.627835,1,,0
+30211,,"Monroe-Red",41.880745,-87.627696,0,41090,0
+30110,,"Jackson-Red",41.878153,-87.627596,0,40560,1
+15052,15052,"State & Harrison/Congress-Red",41.87488286,-87.62745282,0,,1
+16140,16140,"Roosevelt Orange/Red/Green Line Station",41.86755162,-87.62666395,0,,1
+5124,5124,"Cermak-Chinatown Red Line Station",41.85297823,-87.63117521,0,,1
+7638,7638,"Sox-35th Red Line Station",41.83102965,-87.63054819,0,,1
+8072,8072,"47th Red Line Station",41.80924066,-87.63103308,0,,1
+10589,10589,"Garfield Red Line Station",41.79458546,-87.63109954,0,,1
+30178,,"63rd-Red",41.780536,-87.630952,0,40910,0
+14138,14138,"69th Red Line Station",41.768812,-87.62630073,0,,1
+17097,17097,"79th Red Line Station",41.75089853,-87.62494095,0,,1
+9408,9408,"87th Red Line Station",41.7361613,-87.62482928,0,,1
+14012,14012,"95th Street Red Line Station",41.72210187,-87.62477128,0,,1
+8759,8759,"Midway Orange Line Station",41.78642785,-87.73844437,0,,1
+4410,4410,"Pulaski Orange Line Station",41.80016419,-87.72436738,0,,1
+3083,3083,"Kedzie Orange Line Station",41.80486481,-87.70453888,0,,1
+8277,8277,"Western Orange Line Station",41.80533607,-87.68400277,0,,1
+4432,4432,"35th/Archer Orange Line Station",41.82872679,-87.68104289,0,,1
+4164,4164,"Ashland Orange Line Station",41.83910169,-87.66542703,0,,1
+4470,4470,"Halsted Orange Line Station",41.84692098,-87.64768113,0,,1
+16140,16140,"Roosevelt Orange/Red/Green Line Station",41.86755162,-87.62666395,0,,1
+15061,15061,"Van Buren & State-Orange",41.87695959,-87.62801023,0,,1
+30030,,"LaSalle/Van Buren-Orange",41.8768,-87.631739,0,40160,0
+30007,,"Quincy/Wells-Orange",41.878723,-87.63374,0,40040,0
+30141,,"Washington/Wells-Orange",41.882695,-87.63378,0,40730,1
+30374,,"Clark/Lake-Orange (Subway)",41.885737,-87.630886,0,40380,1
+40260,,"State/Lake-Orange",41.88574,-87.627835,1,,0
+40200,,"Randolph/Wabash-Orange",41.884431,-87.626149,1,,0
+30124,,"Madison/Wabash-Orange",41.882023,-87.626098,0,40640,0
+30131,,"Adams/Wabash-Orange",41.879507,-87.626037,0,40680,0
