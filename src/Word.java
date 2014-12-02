@@ -52,6 +52,17 @@ public class Word {
 		}
 	}
 	
+	//Non Default constructor #2 below. This constructor is for the new configuration of the input file
+	public Word(String currentWord, int wordLength, int wordDiff, String wordCat, String wordType, String wordDef) {
+		this.wordContent=currentWord;
+		this.category=wordCat;
+		this.type=wordType;
+		this.explanation=wordDef;
+		this.length=wordLength;
+		this.difficulty=wordDiff;
+		this.baseType=wordType;
+	}
+	
 	//Getters below
 	public String getWord(){
 		return wordContent;

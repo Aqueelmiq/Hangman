@@ -30,9 +30,9 @@ public class ReadFile {
 		inFile = new Scanner(aFile);
 	}
 
-	public ObjectArr storeObjects(){ //method to read in the file and store data in encapsulated array and return it
-		ObjectArr stopsArr;
-		stopsArr = new ObjectArr();
+	public ObjectArray storeObjects(){ //method to read in the file and store data in encapsulated array and return it
+		ObjectArray wordArr;
+		wordArr = new ObjectArray();
 		while (inFile.hasNext()){ //while another line exists in chosen file
 			String nextLine = inFile.nextLine(); //read next line
 			String[] splitString = nextLine.split(","); //split input string into string array
@@ -42,16 +42,10 @@ public class ReadFile {
 			String wordCat = splitString[3]; //fourth element set to the category of the word
 			String wordType = splitString[4]; //fifth element set to the type of the word
 			String wordDef = splitString[5]; //sixth element set to the definition of the word
-			GPSLocation stopLoc;
-			stopLoc = new GPSLocation(stopName,stopLat,stopLon); //instantiate stop gps location
-			ElStop newStop;
-			newStop = new ElStop(stopId, stopLoc); //instantiate L stop without a level
-			ElStop1 levelStop;
-			levelStop = new ElStop1(stopId, stopLoc, level); //instantiate L stop with a level
-			if (level != 0){ //if there is a level for the stop
-				stopsArr.add(levelStop); //add the stop with a level to the next empty position
-			} else stopsArr.add(newStop); //add the stop without a level in the next empty position in the array
+			Word newWord;
+			newWord = new Word(currentWord, wordLength, wordDiff, wordCat, wordType, wordDef);
+			wordArr.add(newWord); //add the word in the next empty position in the array
 		}
-		return stopsArr;
+		return wordArr;
 	}
 }
