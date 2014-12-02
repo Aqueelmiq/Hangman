@@ -1,8 +1,9 @@
 /*
  * CS - 201 Final Project
  * Hangman Game
- * Created by Aqueel Miqdad, Dominik Weigel
+ * Created by Aqueel Miqdad, Dominik Wegiel
  * Last updated 11/29/2014
+ * 
  * Word class stores each word in a class along with other details like category and difficulty
  * It provides methods to access and manipulate details about each word. The word objects will be stored in object array
  */

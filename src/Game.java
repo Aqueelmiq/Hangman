@@ -1,4 +1,10 @@
-
+/*
+ * CS - 201 Final Project
+ * Hangman Game
+ * Created by Aqueel Miqdad, Dominik Wegiel
+ *
+ */
+ 
 public class Game implements Graphics {
 
 	private Word gameWord;
