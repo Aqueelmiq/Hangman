@@ -36,6 +36,10 @@ public class Word {
 		break;
 		case 7: baseType="Trial";
 		break;
+		case 8: baseType="US_Cities";
+		break;
+		case 9: baseType="US_Sports";
+		break;
 		default: baseType="None";
 		}
 	}
