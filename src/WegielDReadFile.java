@@ -1,15 +1,20 @@
 /*
  * Dominik Wegiel
- * Aqueel Miqdad
  * CS 201 
  * Sec. 2 - 112F SB
+ * 11/02/14
  * 
- * 11/30/14
+ * PROBLEM 1 and 2
  * 
- * Final project
- * 
- * This is the ReadFile class, it will process the chosen word list
- * into a generic list, readable and usable by the rest of the project.
+ * This is the ReadFile class, responsible for 
+ * reading in the CTA stop list, creating the objects,
+ * and storing the objects in the encapsulated array,
+ * containing 1 instance variable of scanner,
+ * 1 nondefault constructor with the file name
+ * as the parameter, and a method that reads the input file,
+ * creates the objects, and stores the objects in the encapsulated array.
+ * It will differentiate between a regular stop
+ * and one that needs to be upgraded, and add it accordingly to the 
  */
 
 import java.io.FileNotFoundException;
@@ -20,20 +25,14 @@ public class WegielDReadFile {
 
 	private Scanner inFile; //instance variable of Scanner
 	
-	public WegielDReadFile() throws FileNotFoundException{ //default constructor, reads the standard word list
-		FileReader aFile = new FileReader(wordlist.txt);
-		inFile = new Scanner(aFile);
-	}
-	
 	public WegielDReadFile(String newFile) throws FileNotFoundException{ //nondefault constructor, file as the argument
 		FileReader aFile = new FileReader(newFile);
 		inFile = new Scanner(aFile);
 	}
 
-	@SuppressWarnings("rawtypes")
-	public GenericList_DW storeObjects(){ //method to read in the file and store data in encapsulated array and return it
-		GenericList_DW stopsArr;
-		stopsArr = new GenericList_DW();
+	public WegielDObjectArr storeObjects(){ //method to read in the file and store data in encapsulated array and return it
+		WegielDObjectArr stopsArr;
+		stopsArr = new WegielDObjectArr();
 		while (inFile.hasNext()){ //while another line exists in chosen file
 			String nextLine = inFile.nextLine(); //read next line
 			String[] splitString = nextLine.split(","); //split input string into string array
@@ -47,9 +46,11 @@ public class WegielDReadFile {
 			stopLoc = new WegielDGPSLocation(stopName,stopLat,stopLon); //instantiate stop gps location
 			WegielDElStop newStop;
 			newStop = new WegielDElStop(stopId, stopLoc); //instantiate L stop without a level
-			WegielDElStopUpgrade levelStop;
-			levelStop = new WegielDElStopUpgrade(stopId, stopLoc, level); //instantiate L stop with a level
-			stopsArr.add(newStop); //add the stop without a level in the next empty position in the array
+			WegielDElStop1 levelStop;
+			levelStop = new WegielDElStop1(stopId, stopLoc, level); //instantiate L stop with a level
+			if (level != 0){ //if there is a level for the stop
+				stopsArr.add(levelStop); //add the stop with a level to the next empty position
+			} else stopsArr.add(newStop); //add the stop without a level in the next empty position in the array
 		}
 		return stopsArr;
 	}
