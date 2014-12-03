@@ -131,6 +131,12 @@ public class Game implements Graphics  {
 		else
 			return false;
 	}
+
+	@Override
+	public void clearHangman() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }

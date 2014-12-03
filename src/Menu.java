@@ -156,7 +156,7 @@ public class Menu {
 				System.out.println(random);
 				Word myWord = ((Word)wordArr.getAtPos(random));
 				Scanner in = new Scanner(System.in);
-				Game hangman = new Game(myWord, difficulty);
+				Game hangman = new Game(myWord);
 				System.out.println(hangman.toString());
 				while(!hangman.endGame()) {
 					System.out.println("Guess a letter");
