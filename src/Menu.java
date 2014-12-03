@@ -9,37 +9,46 @@
  * The menu class also error handles the entire output.
  */
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 //Importing java libraries needed for the class
 import java.util.*;
 
 public class Menu {
 	
 	//Instance variables to hold data when user inputs something
-	static int userInputInt, difficulty, subGameChoice, garbageInt;
-	static String userInput;
+	private int userInputInt, difficulty;
+	private String userInput;
+	private  String filename="output.txt";
+	static ReadFile reader;
+	ObjectArray wordArr;
 	
 	//Default constructor assigns null or 0 values to all variable in the beginning if constructor is called
 	public Menu() {
 		userInputInt = 0;
-		garbageInt = 0;
-		subGameChoice = 0;
 		difficulty = 0;
 		userInput = "";
 	}
 	
 	//getInput gets a valid input from the user and returns the integer input. 
 	//(int limit) is the max limit of the userInput you want, anything more than limit will result in disregarding input.
-	public static int getInput(int limit){
+	public int getInput(int limit){
 		//Flag for control loop
 		boolean flag = false;
 		
 		//Initializing Scanner for the menu class
-		Scanner in = new Scanner(System.in);
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		
 		//The below loop ensures that the user presses a valid input
-		while(in.hasNext() && !flag){
+		while(!flag){
 			System.out.println("Please enter your choice: ");
-			userInput = in.next();
+			try {
+				userInput = in.readLine();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 			try { 
 		        userInputInt = Integer.parseInt(userInput);
 		        if(userInputInt<=limit)
@@ -55,24 +64,22 @@ public class Menu {
 		        System.out.println("That is not a valid input, Please try again");
 		    }
 		}
-		//Avoids Memory leak
-		in.close();
 		
 		//returns the valid value after exiting the loop
 		return userInputInt;
 	}
 	
 	//Displays and handles Main Menu of the game
-	public static void mainMenu(){
+	public void mainMenu() throws FileNotFoundException{
 		
 		int menuChoice;
 		//Display Menu using System.out
 		System.out.println("**************************************************");
 		System.out.println("Welcome to Hangman Game, What do you want to play?");
 		System.out.println("--------------------------------------------------");
-		System.out.println("1. Normal Game for exams");
-		System.out.println("2. Sports fun");
-		System.out.println("3. Beat the computer");
+		System.out.println("1. Normal Game");
+		System.out.println("2. Beat the Computer");
+		System.out.println("3. Change File Name");
 		System.out.println("4. Quit game");
 		System.out.println("--------------------------------------------------");
 		
@@ -102,8 +109,13 @@ public class Menu {
 				normalMainMenu();
 				break;
 			case 2: 
+				versusMenu();
 				break;
 			case 3: 
+				System.out.println("**************************************************");
+				System.out.println("Enter File Name: ");
+				setFileName(userInput);
+				mainMenu();
 				break;
 			default:
 				break;
@@ -111,73 +123,54 @@ public class Menu {
 
 	}
 	
-	public static void normalMainMenu(){
-		
-		int menuChoice;
-		
-		//Display Sub Menu using System.out
-				System.out.println("**************************************************");
-				System.out.println("Welcome to Exam words Hangman!");
-				System.out.println("Choose your Exam");
-				System.out.println("--------------------------------------------------");
-				System.out.println("1. SAT");
-				System.out.println("2. TOEFL");
-				System.out.println("3. GRE");
-				System.out.println("4. Quit to Menu");
-				System.out.println("--------------------------------------------------");
-				
-				menuChoice = getInput(4);
-				
-				switch(menuChoice){
-					case 1: 
-						break;
-					case 2: 
-						break;
-					case 3: 
-						break;
-					default:
-						break;
-				}
-				
+	//Set the filename of the input file to read
+	public void setFileName(String fileName) {
+		filename = fileName;
+		try {
+			reader = new ReadFile(filename);
+			wordArr = reader.storeObjects();
+			System.out.println("New File name set, Thank You.");
+		} catch (FileNotFoundException e) {
+			System.out.println("File Not Found, Please try agin");
+			setFileName(fileName);
+			e.printStackTrace();
+		}
+		System.out.println("**************************************************");
 	}
 	
-	public static void subMenu(String welcome){
+	public void normalMainMenu() {
+	
+		//Display Sub Menu using System.out
+				System.out.println("**************************************************");
+				System.out.println("Welcome to Hangman Game!");
+				System.out.println("We have chosen a word for you,\ntry to guess one letter at a time");
+				System.out.println("--------------------------------------------------");
+				try {
+					reader = new ReadFile(filename);
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				}
+				wordArr = reader.storeObjects();
+				String guess="";
+				int random = (int) ((difficulty*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
+				System.out.println(random);
+				Word myWord = ((Word)wordArr.getAtPos(random));
+				Scanner in = new Scanner(System.in);
+				Game hangman = new Game(myWord, difficulty);
+				System.out.println(hangman.toString());
+				while(!hangman.endGame()) {
+					System.out.println("Guess a letter");
+					guess = in.next();
+					hangman.guess(guess.charAt(0));
+				}
+				in.close();
+	}
+	
+	public static void versusMenu(){
 		
 		int menuChoice;
 		
-		//Display Sub Menu using System.out
-		System.out.println("**************************************************");
-		System.out.println("Welcome to " + welcome);
-		System.out.println("Are you ready to start?");
-		System.out.println("--------------------------------------------------");
-		System.out.println("1. to start");
-		System.out.println("2. to exit to Main Menu");
-		System.out.println("--------------------------------------------------");
-		
-		//Get menu choice from user
-		menuChoice = getInput(2);
-		
-		//If user proceeds to game execute game according to which game it is
-		if(menuChoice==1) {
-			switch(welcome){
-				case "SAT Hangman Game": 
-					break;
-				case "TOEFL Hangman Game": 
-					break;
-				case "GRE Hangman Game": 
-					break;
-				case "Sports Hangman Game": 
-					break;
-				case "Versus Hangman Game": 
-					break;
-				default:
-					break;
-			}
-		}
-		
-		//Else go back to main menu
-		else
-			mainMenu();
+	
 	}
 	
 

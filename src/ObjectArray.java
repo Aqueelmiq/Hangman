@@ -12,6 +12,7 @@
 			pointer = 0;
 		}
 		
+		//Getters
 		public int getIndex() {
 			return index;
 		}
@@ -20,11 +21,16 @@
 			return myObject[pos].toString();
 		}
 		
+		//Setters
 		public void add(Object anObj) {
 			myObject[index] = anObj;
 			index++;
 		}
-
+		
+		public Object getAtPos(int pos) {
+			return myObject[pos];
+		}
+		
 		public void delete(int pos){
 			for(int i=pos; i<(index-1); i++) {
 				myObject[i]=myObject[i+1];
@@ -106,6 +112,8 @@
 			
 		}		//automatically allocates int times more memory 
 		
+		//To String method for Object array
+		@Override
 		public String toString(){
 			String myString = null;
 			for(int i=0; i<index; i++){
@@ -117,7 +125,7 @@
 		
 		//Reset Method
 		public void reset(){
-			
+			pointer = 0;
 		}
 		
 		//Has Next
@@ -132,6 +140,20 @@
 		public Object getNext(){
 			pointer++;
 			return myObject[pointer-1];
+		}
+		
+		//Simple selection sort to sort the word list
+		public void sort() {
+			Word tmp;
+			for(int i=0; i<index; i++) {
+				for(int j=i; i<index; j++) {
+					if(((Word)myObject[i]).compareTo((Word)myObject[j])<0) {
+						tmp = (Word)myObject[i];
+						myObject[i] = myObject[j];
+						myObject[j] = tmp;
+					}
+				}
+			}
 		}
 	}
 

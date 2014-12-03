@@ -1,28 +1,33 @@
+import javax.swing.JFrame;
+
 /*
  * CS - 201 Final Project
  * Hangman Game
  * Created by Aqueel Miqdad, Dominik Wegiel
- *
+ * Game Class handles the main game functions in the game.
+ * It has methods required to play a sub game
  */
- 
-public class Game implements Graphics {
+
+public class Game implements Graphics  {
 
 	private Word gameWord;
 	private int category, guessLimit, guessPos;
 	String tempWord;
 	String guessedWord;
+	int pointer;
 	//private char guess;
 	
-	private Game(Word myWord, int category) {
-		gameWord = myWord;
+	public Game(Word myWord, int category) {
+		this.gameWord = myWord;
 		this.category = category;
-		guessLimit = myWord.getLength() + 10;
-		guessPos = 0;
-		tempWord = gameWord.getWord();
-		int i=0;
-		guessedWord = "";
-		while(i < myWord.getLength()) {
+		this.guessLimit = myWord.getLength() + 10;
+		this.guessPos = 0;
+		this.tempWord = gameWord.getWord().toLowerCase();
+		this.pointer = 0;
+		this.guessedWord="";
+		while(pointer<tempWord.length()) {
 			guessedWord += "X";
+			pointer++;
 		}
 	}
 	
@@ -73,12 +78,13 @@ public class Game implements Graphics {
 		for(int i=0; i<tempWord.length(); i++)
 		if(tempWord.charAt(i)==guess) {
 			guessedWord = guessedWord.substring(0,i) + guess + guessedWord.substring(i+1,guessedWord.length());
-			guessPos++;
 		}
+		drawHangman();
+		guessPos++;
 	}
 	
 	public boolean endGame() {
-		if(guessPos == guessLimit)
+		if(guessPos == guessLimit || guessedWord.compareTo(tempWord)==0)
 			return true;
 		else 
 			return false;
@@ -86,6 +92,13 @@ public class Game implements Graphics {
 	
 	@Override
 	public void drawHangman() {
+		System.out.println("-------------------Your Guess and Position------------------");
+		System.out.println("Guesses: " + guessPos + "Guess so far: " + guessedWord);
+		JFrame window = new JFrame();
+	    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    window.setBounds(30, 30, 300, 300);
+	    window.getContentPane().add(new Graphic());
+	    window.setVisible(true);
 		
 	}
 	

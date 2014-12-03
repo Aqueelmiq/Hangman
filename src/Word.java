@@ -12,9 +12,9 @@ public class Word {
 	
 	//Instance Variables for the word class
 	private String wordContent; //Stores the word
-	private int length, difficulty, category;  //Stores length of the word, difficulty and also the category of the word
+	private int length, difficulty;  //Stores length of the word, difficulty and also the category of the word
 	private String type, explanation; //Type  and explanation gives meaning of the word
-	private String baseType; //Base type stores which exam, the word is more frequently used
+	private String baseType, category; //Base type stores which exam, the word is more frequently used
 	
 	/*
 	 * 1.'gre', 2.'gre_hf', 3.'sat1', 4.'sat2', 5.'toefl', 6.'toefl_hf', 7.'trial'
@@ -23,7 +23,6 @@ public class Word {
 	//Non Default constructor below. The switch statement converts the input numeric category into text Category.
 	public Word(String word,String type,String explanation,int category) {
 		this.wordContent=word;
-		this.category=category;
 		this.type= type;
 		this.explanation=explanation;
 		this.length=word.length();
@@ -84,9 +83,9 @@ public class Word {
 		return length;
 	}
 	
-	public int getCategory(){
-		return category;
-	}
+	//public int getCategory(){
+		//return category;
+	//}
 	
 	public int getDifficulty(){
 		return difficulty;
@@ -109,9 +108,9 @@ public class Word {
 		this.length=value;
 	}
 	
-	public void setCategory(int value){
-		this.category=value;
-	}
+	//public void setCategory(int value){
+		//this.category=value;
+	//}
 	
 	public void setDifficulty(int value){
 		this.difficulty=value;
@@ -124,7 +123,7 @@ public class Word {
 	//Custom equals method to check for a redundant same word.
 	public boolean equals(Object obj){
 		if(obj instanceof Word){
-			if(this.wordContent.compareTo(((Word) obj).getWord())==0 && this.category==((Word) obj).getCategory())
+			if(this.wordContent.compareTo(((Word) obj).getWord())==0)
 				return true;
 			else
 				return false;
@@ -132,6 +131,15 @@ public class Word {
 		else{
 			return false;
 		}
+	}
+	
+	public int compareTo(Word myWord){
+		if(this.length<myWord.length)
+			return -1;
+		else if(this.length==myWord.length)
+			return 0;
+		else
+			return 0;
 	}
 	
 	//toString method returns a string with descriptive info about the word.
