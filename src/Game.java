@@ -18,7 +18,7 @@ public class Game implements Graphics  {
 	
 	public Game(Word myWord) {
 		this.gameWord = myWord;
-		this.category = myWord.getCategory();
+		this.category = myWord.getBaseType();
 		this.guessLimit = myWord.getLength() + 10;
 		this.guessPos = 0;
 		this.tempWord = gameWord.getWord().toLowerCase();
@@ -88,25 +88,38 @@ public class Game implements Graphics  {
 	
 	//Game Methods
 	public void guess(char guess) {
-		for(int i=0; i<tempWord.length(); i++)
-		if(tempWord.charAt(i)==guess) {
-			guessedWord = guessedWord.substring(0,i) + guess + guessedWord.substring(i+1,guessedWord.length());
+		guessPos++;
+		for(int i=0; i<tempWord.length(); i++){
+			if(tempWord.charAt(i)==guess) {
+				guessedWord = guessedWord.substring(0,i) + guess + guessedWord.substring(i+1,guessedWord.length());
+			}
 		}
 		drawHangman();
-		guessPos++;
 	}
 	
 	public boolean endGame() {
-		if(guessPos == guessLimit || guessedWord.compareTo(tempWord)==0)
+		if(guessPos >= guessLimit-1 || guessedWord.compareTo(tempWord)==0)
 			return true;
 		else 
 			return false;
 	}
 	
+	public void gameResult() {
+		if(guessPos <= guessLimit && guessedWord.compareTo(tempWord)==0)
+			System.out.println("You win!");
+		else 
+			System.out.println("You lose!");
+	}
+	
+	public String hint() {
+		setGuessPos(getGuessPos() + 5);
+		return gameWord.getExplanation() + "\n\n" + toString();
+	}
+	
 	@Override
 	public void drawHangman() {
 		System.out.println("-------------------Your Guess and Position------------------");
-		System.out.println("Guesses: " + guessPos + "Guess so far: " + guessedWord);
+		System.out.println("Guesses: " + guessPos + "\n" + "Guess so far: " + guessedWord);
 		JFrame window = new JFrame();
 	    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    window.setBounds(30, 30, 300, 300);
@@ -117,6 +130,11 @@ public class Game implements Graphics  {
 	
 	//To String
 	public String toString() {
+		return "Category: " + category + "\n" + "Guess Limit: " + guessLimit + "\n" + "Guesses finished: " + guessPos;
+	}
+	
+	//To String
+	public String toString2() {
 		return "Category: " + category + "\n" + "Guess Limit: " + guessLimit + "\n" + "Guesses finished: " + guessPos + "Word: " + gameWord.toString();
 	}
 	

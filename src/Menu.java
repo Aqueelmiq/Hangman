@@ -21,7 +21,7 @@ public class Menu {
 	//Instance variables to hold data when user inputs something
 	private int userInputInt, difficulty;
 	private String userInput;
-	private  String filename="output.txt";
+	private  String filename="digitcategoryoutput.txt";
 	static ReadFile reader;
 	ObjectArray wordArr;
 	
@@ -159,10 +159,17 @@ public class Menu {
 				Game hangman = new Game(myWord);
 				System.out.println(hangman.toString());
 				while(!hangman.endGame()) {
-					System.out.println("Guess a letter");
+					System.out.println("Guess a letter, type 'hint' for a hint.");
 					guess = in.next();
-					hangman.guess(guess.charAt(0));
+					if (guess.contains("hint")){
+						System.out.println(hangman.hint());
+					}
+					else if (guess.length() > 1){
+						System.out.println("Please enter a single letter!");
+					} else hangman.guess(guess.charAt(0));
 				}
+				System.out.println();
+				hangman.gameResult();
 				in.close();
 	}
 	
