@@ -11,13 +11,26 @@ import javax.swing.JFrame;
 public class Game implements Graphics  {
 
 	private Word gameWord;
-	private int category, guessLimit, guessPos;
-	String tempWord;
-	String guessedWord;
+	private int guessLimit, guessPos;
+	String tempWord, guessedWord, category;
 	int pointer;
 	//private char guess;
 	
-	public Game(Word myWord, int category) {
+	public Game(Word myWord) {
+		this.gameWord = myWord;
+		this.category = myWord.getCategory();
+		this.guessLimit = myWord.getLength() + 10;
+		this.guessPos = 0;
+		this.tempWord = gameWord.getWord().toLowerCase();
+		this.pointer = 0;
+		this.guessedWord="";
+		while(pointer<tempWord.length()) {
+			guessedWord += "X";
+			pointer++;
+		}
+	}
+	
+	public Game(Word myWord, String category) {
 		this.gameWord = myWord;
 		this.category = category;
 		this.guessLimit = myWord.getLength() + 10;
@@ -36,7 +49,7 @@ public class Game implements Graphics  {
 	//	return guess;
 	//}
 	
-	public int getCategory() {
+	public String getCategory() {
 		return category;
 	}
 	
@@ -69,7 +82,7 @@ public class Game implements Graphics  {
 		this.guessLimit = guess;
 	}
 	
-	public void setCategory(int cat) {
+	public void setCategory(String cat) {
 		this.category = cat;
 	}
 	

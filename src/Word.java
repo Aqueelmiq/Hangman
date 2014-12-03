@@ -52,14 +52,30 @@ public class Word {
 	}
 	
 	//Non Default constructor #2 below. This constructor is for the new configuration of the input file
-	public Word(String currentWord, int wordLength, int wordDiff, String wordCat, String wordType, String wordDef) {
+	public Word(String currentWord, int wordLength, int wordDiff, int wordCat, String wordType, String wordDef) {
 		this.wordContent=currentWord;
-		this.category=wordCat;
 		this.type=wordType;
 		this.explanation=wordDef;
 		this.length=wordLength;
 		this.difficulty=wordDiff;
 		this.baseType=wordType;
+		switch(wordCat) {
+		case 1: baseType="GRE";
+				break;
+		case 2: baseType="GRE_HF";
+		break;
+		case 3: baseType="SAT1";
+		break;
+		case 4: baseType="SAT2";
+		break;
+		case 5: baseType="TOEFL";
+		break;
+		case 6: baseType="TOEFL_HF";
+		break;
+		case 7: baseType="Trial";
+		break;
+		default: baseType="None";
+		}
 	}
 	
 	//Getters below
@@ -81,6 +97,10 @@ public class Word {
 	
 	public int getLength(){
 		return length;
+	}
+	
+	public String getCategory(){
+		return category;
 	}
 	
 	//public int getCategory(){
