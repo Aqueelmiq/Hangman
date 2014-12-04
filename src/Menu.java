@@ -176,7 +176,7 @@ public class Menu {
 				}
 				wordArr = reader.storeObjects();
 				String guess="";
-				int random = (int) ((difficulty*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
+				int random = (int) (((difficulty-1)*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
 				System.out.println(random);
 				Word myWord = ((Word)wordArr.getAtPos(random));
 				Scanner in = new Scanner(System.in);
@@ -203,7 +203,7 @@ public class Menu {
 		}
 		wordArr = reader.storeObjects();
 		String guess="";
-		int random = (int) ((difficulty*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
+		int random = (int) (((difficulty-1)*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
 		System.out.println(random);
 		Word myWord = ((Word)wordArr.getAtPos(random)), myWord2 = ((Word)wordArr.getAtPos(random+1));
 		Scanner in = new Scanner(System.in);

@@ -32,7 +32,7 @@ public class Game implements Graphics  {
 		}
 		window = new JFrame();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setBounds(30, 30, 300, 300);
+		window.setBounds(30, 30, 300, 450);
 	}
 	
 	//Getters
@@ -104,7 +104,7 @@ public class Game implements Graphics  {
 	public void drawHangman() {
 		System.out.println("-------------------Your Guess and Position------------------");
 		System.out.println("Incorrect guesses: " + guessPos + "\nGuesses left: " + (guessLimit - guessPos) + "\nGuessed so far: " + guessedWord);
-		window.getContentPane().add(new Graphic(guessPos));
+		window.getContentPane().add(new Graphic(guessPos, guessedWord));
 	    window.setVisible(true);
 		
 	}
