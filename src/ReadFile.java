@@ -7,7 +7,7 @@
  * reading in the word list, creating word objects,
  * and storing the objects in the encapsulated array,
  * containing 1 instance variable of scanner,
- * 1 nondefault constructor with the file name
+ * 1 non default constructor with the file name
  * as the parameter, and a method that reads the input file,
  * creates the objects, and stores the objects in the encapsulated array.
  */

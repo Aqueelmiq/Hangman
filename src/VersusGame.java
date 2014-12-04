@@ -72,7 +72,7 @@ public class VersusGame extends Game {
 				guessedWord2 = guessedWord2.substring(0,i) + random + guessedWord2.substring(i+1,guessedWord2.length());
 			}
 			setGuessPos2(getGuessPos2() + 1);
-		//	drawHangman();
+			drawHangman();
 	}
 
 	public Word getGameWord2() {
