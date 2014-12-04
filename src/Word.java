@@ -14,7 +14,8 @@ public class Word {
 	private String wordContent; //Stores the word
 	private int length, difficulty;  //Stores length of the word, difficulty and also the category of the word
 	private String type, explanation; //Type  and explanation gives meaning of the word
-	private String baseType, category; //Base type stores which exam, the word is more frequently used
+	private String baseType; //Base type stores which exam, the word is more frequently used
+	private int category; //Category is the raw parsed value, later transformed to the appropriate base type
 	
 	/*
 	 * 1.'gre', 2.'gre_hf', 3.'sat1', 4.'sat2', 5.'toefl', 6.'toefl_hf', 7.'trial'
@@ -54,7 +55,6 @@ public class Word {
 	//Non Default constructor #2 below. This constructor is for the new configuration of the input file
 	public Word(String currentWord, int wordLength, int wordDiff, String wordCat, String wordType, String wordDef) {
 		this.wordContent=currentWord;
-		this.category=wordCat;
 		this.type=wordType;
 		this.explanation=wordDef;
 		this.length=wordLength;
@@ -62,7 +62,7 @@ public class Word {
 		this.baseType=wordType;
 	}
 	
-	public Word(String currentWord, int wordDiff, String wordCat, String wordType, String wordDef) {
+	public Word(String currentWord, int wordDiff, int wordCat, String wordType, String wordDef) {
 		this.wordContent=currentWord;
 		this.category=wordCat;
 		this.type=wordType;
@@ -70,6 +70,23 @@ public class Word {
 		this.length=currentWord.length();
 		this.difficulty=wordDiff;
 		this.baseType=wordType;
+		switch(category) {
+		case 1: baseType="GRE";
+				break;
+		case 2: baseType="GRE_HF";
+		break;
+		case 3: baseType="SAT1";
+		break;
+		case 4: baseType="SAT2";
+		break;
+		case 5: baseType="TOEFL";
+		break;
+		case 6: baseType="TOEFL_HF";
+		break;
+		case 7: baseType="Trial";
+		break;
+		default: baseType="None";
+		}
 	}
 	
 	//Getters below

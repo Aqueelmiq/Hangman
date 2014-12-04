@@ -21,7 +21,7 @@ public class Game implements Graphics  {
 		this.gameWord = myWord;
 		this.category = category;
 		this.guessLimit = 15;
-		this.guessPos = 1;
+		this.guessPos = 0;
 		this.tempWord = gameWord.getWord().toLowerCase();
 		this.pointer = 0;
 		this.guessedWord="";
@@ -71,24 +71,24 @@ public class Game implements Graphics  {
 	
 	//Game Methods
 	public void guess(char guess) {
+		guessPos++;
 		for(int i=0; i<tempWord.length(); i++)
 		if(tempWord.charAt(i)==guess) {
 			guessedWord = guessedWord.substring(0,i) + guess + guessedWord.substring(i+1,guessedWord.length());
 		}
 		drawHangman();
-		guessPos++;
 	}
 	
 	public boolean endGame() {
 		if(guessedWord.compareTo(tempWord)==0) {
-			System.out.println("You Win");
+			System.out.println("You Win!");
 			return true;
 		}
 		else if(guessPos<guessLimit) { 
 			return false;
 		}
 		else {
-			System.out.println("You Loose"); 
+			System.out.println("You Lose!"); 
 			return true;
 		}
 	}
@@ -96,7 +96,7 @@ public class Game implements Graphics  {
 	@Override
 	public void drawHangman() {
 		System.out.println("-------------------Your Guess and Position------------------");
-		System.out.println("Guesses Finished: " + guessPos + "\tGuess so far: " + guessedWord);
+		System.out.println("Guesses Finished: " + guessPos + "\tGuessed so far: " + guessedWord);
 		window.getContentPane().add(new Graphic(guessPos));
 	    window.setVisible(true);
 		
@@ -104,7 +104,7 @@ public class Game implements Graphics  {
 	
 	//To String
 	public String toString() {
-		return "Category: " + category + "\n" + "Guess Limit: " + guessLimit + "\n" + "Guesses finished: " + guessPos + "Word: " + gameWord.toString();
+		return "Category: " + gameWord.getBaseType() + "\n" + "Guess Limit: " + guessLimit + "\n" + "Guesses finished: " + guessPos + "Word: " + gameWord.toString();
 	}
 	
 	//Equals
@@ -117,6 +117,12 @@ public class Game implements Graphics  {
 		}
 		else
 			return false;
+	}
+
+	@Override
+	public void clearHangman() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

@@ -39,7 +39,7 @@ public class ReadFile {
 			String currentWord = splitString[0]; //first element set to the word
 			//int wordLength = Integer.parseInt(splitString[1]); //second element set to the length
 			int wordDiff = Integer.parseInt(splitString[1]); //second element set to the difficulty of the word
-			String wordCat = splitString[2]; //third element set to the category of the word
+			int wordCat = Integer.parseInt(splitString[2]); //third element set to the category of the word
 			String wordType = splitString[3]; //fourth element set to the type of the word
 			String wordDef = splitString[4]; //fifth element set to the definition of the word
 			Word newWord;
