@@ -160,6 +160,10 @@ public class Word {
 		}
 	}
 	
+	public char charAt(int pos){
+		return wordContent.charAt(pos);
+	}
+	
 	public int compareTo(Word myWord){
 		if(this.length<myWord.length)
 			return -1;
