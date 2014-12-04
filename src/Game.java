@@ -11,45 +11,33 @@ import javax.swing.JFrame;
 public class Game implements Graphics  {
 
 	private Word gameWord;
-	private int guessLimit, guessPos;
-	String tempWord, guessedWord, category;
+	private int category, guessLimit, guessPos;
+	String tempWord;
+	String guessedWord;
 	int pointer;
-	//private char guess;
+	JFrame window;
 	
-	public Game(Word myWord) {
-		this.gameWord = myWord;
-		this.category = myWord.getBaseType();
-		this.guessLimit = myWord.getLength() + 10;
-		this.guessPos = 0;
-		this.tempWord = gameWord.getWord().toLowerCase();
-		this.pointer = 0;
-		this.guessedWord="";
-		while(pointer<tempWord.length()) {
-			guessedWord += "X";
-			pointer++;
-		}
-	}
-	
-	public Game(Word myWord, String category) {
+	public Game(Word myWord, int category) {
 		this.gameWord = myWord;
 		this.category = category;
-		this.guessLimit = myWord.getLength() + 10;
-		this.guessPos = 0;
+		this.guessLimit = 15;
+		this.guessPos = 1;
 		this.tempWord = gameWord.getWord().toLowerCase();
 		this.pointer = 0;
 		this.guessedWord="";
 		while(pointer<tempWord.length()) {
 			guessedWord += "X";
 			pointer++;
+			
 		}
+		window = new JFrame();
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setBounds(30, 30, 300, 300);
 	}
 	
 	//Getters
-//	public char getGuess() {
-	//	return guess;
-	//}
 	
-	public String getCategory() {
+	public int getCategory() {
 		return category;
 	}
 	
@@ -69,11 +57,6 @@ public class Game implements Graphics  {
 		return tempWord;
 	}
 	
-	//Setters
-	public void setGuess(char guess) {
-	//	this.guess = guess;
-	}
-	
 	public void setGuessPos(int guess) {
 		this.guessPos = guess;
 	}
@@ -82,59 +65,45 @@ public class Game implements Graphics  {
 		this.guessLimit = guess;
 	}
 	
-	public void setCategory(String cat) {
+	public void setCategory(int cat) {
 		this.category = cat;
 	}
 	
 	//Game Methods
 	public void guess(char guess) {
-		guessPos++;
-		for(int i=0; i<tempWord.length(); i++){
-			if(tempWord.charAt(i)==guess) {
-				guessedWord = guessedWord.substring(0,i) + guess + guessedWord.substring(i+1,guessedWord.length());
-			}
+		for(int i=0; i<tempWord.length(); i++)
+		if(tempWord.charAt(i)==guess) {
+			guessedWord = guessedWord.substring(0,i) + guess + guessedWord.substring(i+1,guessedWord.length());
 		}
 		drawHangman();
+		guessPos++;
 	}
 	
 	public boolean endGame() {
-		if(guessPos >= guessLimit-1 || guessedWord.compareTo(tempWord)==0)
+		if(guessedWord.compareTo(tempWord)==0) {
+			System.out.println("You Win");
 			return true;
-		else 
+		}
+		else if(guessPos<guessLimit) { 
 			return false;
-	}
-	
-	public void gameResult() {
-		if(guessPos <= guessLimit && guessedWord.compareTo(tempWord)==0)
-			System.out.println("You win!");
-		else 
-			System.out.println("You lose!");
-	}
-	
-	public String hint() {
-		setGuessPos(getGuessPos() + 5);
-		return gameWord.getExplanation() + "\n\n" + toString();
+		}
+		else {
+			System.out.println("You Loose"); 
+			return true;
+		}
 	}
 	
 	@Override
 	public void drawHangman() {
 		System.out.println("-------------------Your Guess and Position------------------");
-		System.out.println("Guesses: " + guessPos + "\n" + "Guess so far: " + guessedWord);
-		JFrame window = new JFrame();
-	    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    window.setBounds(30, 30, 300, 300);
-	    window.getContentPane().add(new Graphic());
+		System.out.println("Guesses Finished: " + guessPos + "\tGuess so far: " + guessedWord);
+		window.getContentPane().add(new Graphic(guessPos));
 	    window.setVisible(true);
 		
 	}
 	
 	//To String
 	public String toString() {
-		return "Category: " + category + "\n" + "Guess Limit: " + guessLimit + "\n" + "Guesses finished: " + guessPos;
-	}
-	
-	//To String
-	public String toString2() {
 		return "Category: " + category + "\n" + "Guess Limit: " + guessLimit + "\n" + "Guesses finished: " + guessPos + "Word: " + gameWord.toString();
 	}
 	
@@ -148,12 +117,6 @@ public class Game implements Graphics  {
 		}
 		else
 			return false;
-	}
-
-	@Override
-	public void clearHangman() {
-		// TODO Auto-generated method stub
-		
 	}
 	
 	

@@ -21,7 +21,7 @@ public class Menu {
 	//Instance variables to hold data when user inputs something
 	private int userInputInt, difficulty;
 	private String userInput;
-	private  String filename="digitcategoryoutput.txt";
+	private  String filename="output.txt";
 	static ReadFile reader;
 	ObjectArray wordArr;
 	
@@ -156,27 +156,41 @@ public class Menu {
 				System.out.println(random);
 				Word myWord = ((Word)wordArr.getAtPos(random));
 				Scanner in = new Scanner(System.in);
-				Game hangman = new Game(myWord);
+				Game hangman = new Game(myWord, difficulty);
 				System.out.println(hangman.toString());
 				while(!hangman.endGame()) {
-					System.out.println("Guess a letter, type 'hint' for a hint.");
-					guess = in.next();
-					if (guess.contains("hint")){
-						System.out.println(hangman.hint());
-					}
-					else if (guess.length() > 1){
-						System.out.println("Please enter a single letter!");
-					} else hangman.guess(guess.charAt(0));
+					System.out.println("Guess a letter");
+					guess = in.nextLine();
+					hangman.guess(guess.charAt(0));
 				}
-				System.out.println();
-				hangman.gameResult();
 				in.close();
 	}
 	
-	public static void versusMenu(){
+	public void versusMenu(){
 		
-		int menuChoice;
-		
+		System.out.println("**************************************************");
+		System.out.println("Welcome to Hangman Game!");
+		System.out.println("We have chosen a word for you,\ntry to guess one letter at a time");
+		System.out.println("--------------------------------------------------");
+		try {
+			reader = new ReadFile(filename);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		wordArr = reader.storeObjects();
+		String guess="";
+		int random = (int) ((difficulty*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
+		System.out.println(random);
+		Word myWord = ((Word)wordArr.getAtPos(random)), myWord2 = ((Word)wordArr.getAtPos(random+1));
+		Scanner in = new Scanner(System.in);
+		VersusGame hangman2 = new VersusGame(myWord, myWord2, difficulty);
+		System.out.println(hangman2.toString());
+		while(!hangman2.endGame()) {
+			System.out.println("Guess a letter");
+			guess = in.nextLine();
+			hangman2.guess(guess.charAt(0));
+		}
+		in.close();
 	
 	}
 	
