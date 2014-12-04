@@ -62,6 +62,16 @@ public class Word {
 		this.baseType=wordType;
 	}
 	
+	public Word(String currentWord, int wordDiff, String wordCat, String wordType, String wordDef) {
+		this.wordContent=currentWord;
+		this.category=wordCat;
+		this.type=wordType;
+		this.explanation=wordDef;
+		this.length=currentWord.length();
+		this.difficulty=wordDiff;
+		this.baseType=wordType;
+	}
+	
 	//Getters below
 	public String getWord(){
 		return wordContent;

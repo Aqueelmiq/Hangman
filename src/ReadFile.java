@@ -21,7 +21,7 @@ public class ReadFile {
 	private Scanner inFile; //instance variable of Scanner
 	
 	public ReadFile() throws FileNotFoundException{ //default constructor, uses default wordlist as the file
-		FileReader aFile = new FileReader("wordlist.txt");
+		FileReader aFile = new FileReader("dco.txt");
 		inFile = new Scanner(aFile);
 	}
 	
@@ -37,13 +37,13 @@ public class ReadFile {
 			String nextLine = inFile.nextLine(); //read next line
 			String[] splitString = nextLine.split(","); //split input string into string array
 			String currentWord = splitString[0]; //first element set to the word
-			int wordLength = Integer.parseInt(splitString[1]); //second element set to the length
-			int wordDiff = Integer.parseInt(splitString[2]); //third element set to the difficulty of the word
-			String wordCat = splitString[3]; //fourth element set to the category of the word
-			String wordType = splitString[4]; //fifth element set to the type of the word
-			String wordDef = splitString[5]; //sixth element set to the definition of the word
+			//int wordLength = Integer.parseInt(splitString[1]); //second element set to the length
+			int wordDiff = Integer.parseInt(splitString[1]); //second element set to the difficulty of the word
+			String wordCat = splitString[2]; //third element set to the category of the word
+			String wordType = splitString[3]; //fourth element set to the type of the word
+			String wordDef = splitString[4]; //fifth element set to the definition of the word
 			Word newWord;
-			newWord = new Word(currentWord, wordLength, wordDiff, wordCat, wordType, wordDef);
+			newWord = new Word(currentWord, wordDiff, wordCat, wordType, wordDef);
 			wordArr.add(newWord); //add the word in the next empty position in the array
 		}
 		return wordArr;
