@@ -1,4 +1,4 @@
-nullabase,5,2,1,verb,cause to feel shame; hurt the pride of
+abase,5,2,1,verb,cause to feel shame; hurt the pride of
 abash,5,2,1,verb,cause to be embarrassed; cause to feel self-conscious
 abate,5,2,1,verb,become less in amount or intensity
 abbreviate,10,3,1,verb,shorten
@@ -948,7 +948,6 @@ categorical,11,3,1,adjective,relating to or included in a category or categories
 catharsis,9,3,1,noun,purging the body by the use of a cathartic to stimulate evacuation of the bowels
 cathartic,9,3,1,adjective,emotionally purging (of e.g. art)
 cathedral,9,3,5,adjective,relating to or containing or issuing from a bishop's office or throne
-catholic,8,3,1,adjective,Of broad or liberal scope; comprehensive: "The 100-odd pages of formulas and constants are surely the most catholic to be found”  ( Scientific American).
 caucus,6,2,1,noun,a closed political meeting
 caustic,7,2,1,noun,any chemical substance that burns or destroys living tissue
 cauterize,9,3,1,verb,burn$ sear$ or freeze (tissue) using a hot iron or electric current or a caustic agent
@@ -2013,7 +2012,7 @@ elegiacal,9,3,1,adjective,elegiac; expressing sorrow.
 elegy,5,2,1,noun,a mournful poem; a lament for the dead
 elicit,6,2,1,verb,deduce (a principle) or construe (a meaning)
 eligible,8,3,5,adjective,qualified for or allowed or worthy of being chosen
-elite,5,2,4,noun,A group or class of persons or a member of such a group or class$ enjoying superior intellectual$ social$ or economic status: "In addition to notions of social equality there was much emphasis on the role of elites and of heroes within them”  ( Times Literary Supplement).
+elite,5,2,4,noun,A group or class of persons or a member of such a group or class$ enjoying superior intellectual$ social$ or economic status
 elixir,6,2,1,noun,hypothetical substance that the alchemists believed to be capable of changing base metals into gold
 ellipsis,8,3,1,noun,omission or suppression of parts of words or sentences
 elliptical,10,3,1,adjective,characterized by extreme economy of expression or omission of superfluous elements
@@ -4884,7 +4883,7 @@ reserve,7,2,1,noun,something kept back or saved for future use or a special purp
 reside,6,2,5,verb,make one's home in a particular place or community
 residue,7,2,1,noun,something left after other parts have been taken away
 resignation,11,3,4,noun,acceptance of despair
-resigned,8,3,1,adjective,Feeling or marked by resignation; acquiescent: "I like trees because they seem more resigned to the way they have to live than other things do”  ( Willa Cather).
+resigned,8,3,1,adjective,Feeling or marked by resignation; acquiescent
 resilient,9,3,1,adjective,recovering readily from adversity$ depression$ or the like
 resolute,8,3,3,adjective,characterized by quickness and firmness
 resolution,10,3,1,noun,a formal expression by a meeting; a1ed to by a vote
@@ -5126,7 +5125,7 @@ sentient,8,3,1,adjective,endowed with feeling and unstructured consciousness
 sentry,6,2,5,noun,a person employed to keep watch for some anticipated event
 septic,6,2,1,adjective,of or relating to or caused by putrefaction
 sepulcher,9,3,1,noun,a chamber that is used as a grave
-sequacious,10,3,1,adjective,Persisting in a continuous intellectual or stylistic direction: "I make these notes$ but am tired of notes . . . I want something sequacious now &amp; robust”  ( Virginia Woolf).
+sequacious,10,3,1,adjective,Persisting in a continuous intellectual or stylistic direction
 sequester,9,3,1,verb,requisition forcibly$ as of enemy property
 seraph,6,2,1,noun,an angel of the first order; usually portrayed as the winged head of a child
 sere,4,1,1,adjective,(used especially of vegetation) having lost all moisture
@@ -6018,4 +6017,82 @@ zealot,6,2,1,noun,a fervent and even militant proponent of something
 zealous,7,2,3,adjective,marked by active interest and enthusiasm
 zeitgeist,9,3,4,noun,The spirit of the age; the taste$ outlook$ and spirit characteristic of a period.
 zenith,6,2,1,noun,the point above the observer that is directly opposite the nadir on the imaginary sphere against which celestial bodies appear to be projected
-zephyr,6,2,1,noun,(1ek 
+NewYork,New York,8,175,133
+LosAngeles,California,3,792,621
+Chicago,Illinois,2,695,598
+Houston,Texas,2,099,451
+Philadelphia,Pennsylvania,1,526,006
+Phoenix,Arizona,1,445,632
+Dallas,Texas,1,197,816
+Jacksonville,Florida,821,784
+Indianapolis,Indiana,820,445
+Austin,Texas,790,390
+Columbus,Ohio,787,033
+Charlotte,North Carolina,731,424
+Detroit,Michigan,713,777
+Memphis,Tennessee,646,889
+Boston,Massachusetts,617,594
+Seattle,Washington,608,660
+Denver,Colorado,600,158
+Baltimore,Maryland,620,961
+Washington,District of Columbia,601,723
+Nashville,Tennessee,601,222
+Louisville,Kentucky,597,337
+Milwaukee,Wisconsin,594,833
+Portland,Oregon,583,776
+LasVegas,Nevada,583,756
+Albuquerque,New Mexico,545,852
+Tucson,Arizona,520,116
+Fresno,California,494,665
+Sacramento,California,466,488
+Mesa,Arizona,439,041
+Atlanta,Georgia,420,003
+ColoradoSprings,Colorado,416,427
+Raleigh,North Carolina,403,892
+Omaha,Nebraska,408,958
+Miami,Florida,399,457
+Tulsa,Oklahoma,391,906
+Oakland,California,390,724
+Cleveland,Ohio,396,815
+Minneapolis,Minnesota,382,578
+Wichita,Kansas,382,368
+Arlington,Texas,365,438
+NewOrleans,Louisiana,343,829
+Bakersfield,California,347,483
+Tampa,Florida,335,709
+Anaheim,California,336,265
+Honolulu,Hawaii,337,256
+Aurora,Colorado,325,078
+Riverside,California,303,871
+Corpus Christi,Texas,305,215
+Pittsburgh,Pennsylvania,305,704
+Lexington-Fayette,Kentucky,295,803
+Stockton,California,291,707
+Cincinnati,Ohio,296,943
+Anchorage,Alaska,291,826
+Toledo,Ohio,287,208
+Newark,New Jersey,277,140
+Greensboro,North Carolina,269,666
+Plano,Texas,259,841
+Lincoln,Nebraska,258,379
+Buffalo,New York,261,310
+Henderson,Nevada,257,729
+Orlando,Florida,238,300
+Norfolk,Virginia,242,803
+Laredo,Texas,236,091
+Chandler,Arizona,236,123
+Madison,Wisconsin,233,209
+Lubbock,Texas,229,573
+Durham,North Carolina,228,330
+Garland,Texas,226,876
+Glendale,Arizona,226,721
+Hialeah,Florida,224,669
+Reno,Nevada,225,221
+Chesapeake,Virginia,222,209
+Scottsdale,Arizona,217,385
+Irving,Texas,216,290
+Fremont,California,214,089
+Irvine,California,212,375
+Birmingham,Alabama,212,237
+Gilbert,Arizona,208,453
+Rochester,New York,210,565
