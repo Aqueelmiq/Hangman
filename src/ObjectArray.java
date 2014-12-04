@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 
 	public class ObjectArray {
 		
@@ -51,7 +53,7 @@
 	    public int isThere(Object myObj){
 	    	int myInt=-1;
 	    	for(int i=0; i<index; i++) {
-	    		if(myObject[i]==myObj) {
+	    		if(myObject[i].equals(myObj)) {
 	    			myInt=i;
 	    		}
 	    	}
@@ -154,6 +156,25 @@
 					}
 				}
 			}
+		}
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			ObjectArray other = (ObjectArray) obj;
+			if (MAX != other.MAX)
+				return false;
+			if (index != other.index)
+				return false;
+			if (!Arrays.equals(myObject, other.myObject))
+				return false;
+			if (pointer != other.pointer)
+				return false;
+			return true;
 		}
 	}
 
