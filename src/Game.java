@@ -71,10 +71,17 @@ public class Game implements Graphics  {
 	
 	//Game Methods
 	public void guess(char guess) {
-		guessPos++;
-		for(int i=0; i<tempWord.length(); i++)
-		if(tempWord.charAt(i)==guess) {
-			guessedWord = guessedWord.substring(0,i) + guess + guessedWord.substring(i+1,guessedWord.length());
+		boolean guessCorrect = false;
+		for(int i=0; i<tempWord.length(); i++){
+			if(tempWord.charAt(i)==guess) {
+				guessCorrect = true;
+				System.out.println("Correct guess!");
+				guessedWord = guessedWord.substring(0,i) + guess + guessedWord.substring(i+1,guessedWord.length());
+			} 
+		}
+		if (guessCorrect == false){
+			System.out.println("Incorrect guess!");
+			guessPos++;
 		}
 		drawHangman();
 	}
@@ -96,7 +103,7 @@ public class Game implements Graphics  {
 	@Override
 	public void drawHangman() {
 		System.out.println("-------------------Your Guess and Position------------------");
-		System.out.println("Guesses Finished: " + guessPos + "\tGuessed so far: " + guessedWord);
+		System.out.println("Incorrect guesses: " + guessPos + "\nGuesses left: " + (guessLimit - guessPos) + "\nGuessed so far: " + guessedWord);
 		window.getContentPane().add(new Graphic(guessPos));
 	    window.setVisible(true);
 		
