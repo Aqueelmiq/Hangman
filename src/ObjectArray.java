@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 	public class ObjectArray {
 		
-		private final int MAX = 100000;
+		private final int MAX = 10000;
 		private Object[] myObject;
 		private int index;
 		private int pointer;

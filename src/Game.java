@@ -11,10 +11,12 @@ import javax.swing.JFrame;
 public class Game implements Graphics  {
 
 	private Word gameWord;
-	private int category, guessLimit, guessPos;
-	String tempWord;
-	String guessedWord;
-	int pointer;
+	private int category;
+	protected int guessLimit;
+	protected int guessPos;
+	protected String tempWord;
+	protected String guessedWord;
+	private int pointer;
 	JFrame window;
 	
 	public Game(Word myWord, int category) {

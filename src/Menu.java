@@ -9,17 +9,15 @@
  * The menu class also error handles the entire output.
  */
 
-import java.io.BufferedReader;
+
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
 //Importing java libraries needed for the class
 import java.util.*;
 
 public class Menu {
 	
 	//Instance variables to hold data when user inputs something
-	private int userInputInt, difficulty, category;
+	private int difficulty, category;
 	private String userInput;
 	private String filename="dco.txt";
 	private ReadFile reader;
@@ -27,48 +25,10 @@ public class Menu {
 	
 	//Default constructor assigns null or 0 values to all variable in the beginning if constructor is called
 	public Menu() {
-		userInputInt = 0;
 		difficulty = 0;
 		userInput = "";
 	}
-	
-	//getInput gets a valid input from the user and returns the integer input. 
-	//(int limit) is the max limit of the userInput you want, anything more than limit will result in disregarding input.
-	public int getInput(int limit){
-		//Flag for control loop
-		boolean flag = false;
-		
-		//Initializing Scanner for the menu class
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		
-		//The below loop ensures that the user presses a valid input
-		while(!flag){
-			System.out.println("Please enter your choice: ");
-			try {
-				userInput = in.readLine();
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-			try { 
-		        userInputInt = Integer.parseInt(userInput);
-		        if(userInputInt<=limit)
-		        	flag = true;
-		        else{
-		        	flag = false;
-		        	System.out.println("--------------------------------------------------");
-		        	System.out.println("That is not a valid input, Please try again");
-		        }
-		    } catch(NumberFormatException e) { 
-		        flag = false; 
-		        System.out.println("--------------------------------------------------");
-		        System.out.println("That is not a valid input, please try again!");
-		    }
-		}
-		
-		//returns the valid value after exiting the loop
-		return userInputInt;
-	}
-	
+
 	//Displays and handles Main Menu of the game
 	public void mainMenu() throws FileNotFoundException{
 		
@@ -87,7 +47,7 @@ public class Menu {
 		System.out.println("--------------------------------------------------");
 		
 		//Calling getInput() to get a valid userInput under or equal to 4
-		menuChoice = getInput(5);
+		menuChoice = GameHandler.getInput(5);
 		
 		//The switch statement uses the userInput to navigate to the right function to start the game
 		switch(menuChoice) {
@@ -116,7 +76,7 @@ public class Menu {
 				System.out.println("4. Quit to Main Menu");
 				System.out.println("--------------------------------------------------");
 				//Calling getInput() to get a valid userInput under or equal to 4
-				category = getInput(4);
+				category = GameHandler.getInput(4);
 						
 				//if user presses 4, go back to main menu, Uses recursion here
 				if(category == 4)
@@ -140,7 +100,7 @@ public class Menu {
 		System.out.println("--------------------------------------------------");
 				
 		//Calling getInput() to get a valid userInput under or equal to 4
-		difficulty = getInput(4);
+		difficulty = GameHandler.getInput(4);
 				
 		//if user presses 4, go back to main menu, Uses recursion here
 		if(difficulty == 4)
@@ -169,25 +129,7 @@ public class Menu {
 				System.out.println("Welcome to Hangman Game!");
 				System.out.println("We have chosen a word for you,\ntry to guess one letter at a time");
 				System.out.println("--------------------------------------------------");
-				try {
-					reader = new ReadFile(filename);
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				}
-				wordArr = reader.storeObjects();
-				String guess="";
-				int random = (int) (((difficulty-1)*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
-				System.out.println(random);
-				Word myWord = ((Word)wordArr.getAtPos(random));
-				Scanner in = new Scanner(System.in);
-				Game hangman = new Game(myWord, difficulty);
-				System.out.println(hangman.toString());
-				while(!hangman.endGame()) {
-					System.out.println("Guess a letter");
-					guess = in.nextLine();
-					hangman.guess(guess.charAt(0));
-				}
-				in.close();
+				GameHandler.playMainGame(difficulty, filename);
 	}
 	
 	public void versusMenu(){
@@ -196,25 +138,7 @@ public class Menu {
 		System.out.println("Welcome to Hangman Game!");
 		System.out.println("We have chosen a word for you,\ntry to guess one letter at a time");
 		System.out.println("--------------------------------------------------");
-		try {
-			reader = new ReadFile(filename);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		wordArr = reader.storeObjects();
-		String guess="";
-		int random = (int) (((difficulty-1)*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
-		System.out.println(random);
-		Word myWord = ((Word)wordArr.getAtPos(random)), myWord2 = ((Word)wordArr.getAtPos(random+1));
-		Scanner in = new Scanner(System.in);
-		VersusGame hangman2 = new VersusGame(myWord, myWord2, difficulty);
-		System.out.println(hangman2.toString());
-		while(!hangman2.endGame()) {
-			System.out.println("Guess a letter");
-			guess = in.nextLine();
-			hangman2.guess(guess.charAt(0));
-		}
-		in.close();
+		GameHandler.playVersusGame(difficulty, filename);
 	
 	}
 	
