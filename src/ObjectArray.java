@@ -148,7 +148,7 @@ import java.util.Arrays;
 		public void sort() {
 			Word tmp;
 			for(int i=0; i<index; i++) {
-				for(int j=i; i<index; j++) {
+				for(int j=0; j<index; j++) {//originally j=i; i<index
 					if(((Word)myObject[i]).compareTo((Word)myObject[j])<0) {
 						tmp = (Word)myObject[i];
 						myObject[i] = myObject[j];
