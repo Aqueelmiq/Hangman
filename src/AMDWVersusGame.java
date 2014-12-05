@@ -8,9 +8,9 @@
 
 import java.util.*;
 
-public class AMDWVersusGame extends Game {
+public class AMDWVersusGame extends AMDWGame {
 	//usual instance variables but this time for the computer
-	private Word gameWord2;
+	private AMDWWord gameWord2;
 	private String guessedWord2, tempWord2;
 	private int guessPos2; //Computer's Guess Pos
 	private final int guessLimit2 =16; //Computer's guess limit
@@ -19,7 +19,7 @@ public class AMDWVersusGame extends Game {
 	int counter,check; //counts guess pool;
 	
 	//Non-default constructor
-	public VersusGame(Word myWord, Word myWord2, int difficulty) {
+	public AMDWVersusGame(AMDWWord myWord, AMDWWord myWord2, int difficulty) {
 		super(myWord, difficulty);
 		setGameWord2(myWord2);
 		tempWord2 = myWord2.getWord();
@@ -76,7 +76,7 @@ public class AMDWVersusGame extends Game {
 		System.out.println("Incorrect guesses: " + guessPos + "\nGuesses left: " + (guessLimit - guessPos) + "\nGuessed so far: " + guessedWord);
 		System.out.println("------------------------------------------------------------------");
 		//Add new Graphic in the pane
-		window.getContentPane().add(new Graphic(guessPos));
+		window.getContentPane().add(new AMDWGraphic(guessPos));
 	    window.setVisible(true);
 	}
 
@@ -152,11 +152,11 @@ public class AMDWVersusGame extends Game {
 	}
 	
 	//Getters
-	public Word getGameWord2() {
+	public AMDWWord getGameWord2() {
 		return gameWord2;
 	}
 
-	public void setGameWord2(Word gameWord2) {
+	public void setGameWord2(AMDWWord gameWord2) {
 		this.gameWord2 = gameWord2;
 	}
 
