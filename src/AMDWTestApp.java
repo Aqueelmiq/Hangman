@@ -1,4 +1,3 @@
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -196,6 +195,7 @@ public class AMDWTestApp {
 		System.out.println();
 		System.out.println();
 		
+		in.close();
 	}
 
 }
