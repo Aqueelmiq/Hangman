@@ -21,7 +21,7 @@ public class Menu {
 	private String userInput; //Stores any user input
 	private String filename="dco.txt"; //stores filename, default filename set
 	private ReadFile reader; //Reader class instance to read the filename
-	ObjectArray wordArr; //Word Array instance to store the file name
+	ObjectArrayAdvanced wordArr; //Word Array instance to store the file name
 	
 	//Default constructor assigns null or 0 values to all variable in the beginning if constructor is called
 	public Menu() {
@@ -164,7 +164,18 @@ public class Menu {
 			System.out.println("2. Delete by word name");
 			int choice = GameHandler.getInput(2);
 			if(choice == 1) {
-				
+				System.out.println("--------------------------------------------------");
+				System.out.println("Please enter your pos");
+				wordArr.delete(GameHandler.getInput(wordArr.getIndex()));
+				System.out.println("Word Deleted");
+				System.out.println("--------------------------------------------------");
+			}
+			else {
+				System.out.println("--------------------------------------------------");
+				System.out.println("Please enter your Word");
+				wordArr.delete(in.nextLine().toLowerCase());
+				System.out.println("Word Deleted");
+				System.out.println("--------------------------------------------------");
 			}
 			break;
 		case 3:

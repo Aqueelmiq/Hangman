@@ -30,9 +30,9 @@ public class ReadFile {
 		inFile = new Scanner(aFile);
 	}
 
-	public ObjectArray storeObjects(){ //method to read in the file and store data in encapsulated array and return it
-		ObjectArray wordArr;
-		wordArr = new ObjectArray();
+	public ObjectArrayAdvanced storeObjects(){ //method to read in the file and store data in encapsulated array and return it
+		ObjectArrayAdvanced wordArr;
+		wordArr = new ObjectArrayAdvanced();
 		while (inFile.hasNext()){ //while another line exists in chosen file
 			String nextLine = inFile.nextLine(); //read next line
 			String[] splitString = nextLine.split(","); //split input string into string array

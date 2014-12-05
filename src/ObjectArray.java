@@ -7,12 +7,10 @@ import java.util.Arrays;
 		private final int MAX = 10000;
 		private Object[] myObject;
 		private int index;
-		private int pointer;
 		
 		public ObjectArray() {
 			myObject = new Object[MAX];
 			index = 0;
-			pointer = 0;
 		}
 		
 		//Getters
@@ -32,6 +30,10 @@ import java.util.Arrays;
 		
 		public Object getAtPos(int pos) {
 			return myObject[pos];
+		}
+		
+		public void setAtPos(int pos, Object obj) {
+			 myObject[pos] =  obj;
 		}
 		
 		public void delete(int pos){
@@ -73,14 +75,6 @@ import java.util.Arrays;
 	        	   
 	    } //searches for anObj and deletes if found
 	    
-	    public void delete(String word){
-	    	int pos;
-	    	if((pos=isThere(myObj))!=-1){
-	    		delete(pos);
-	    	}
-	    	else{
-	    		System.out.println("Object not found");
-	    	}
 	    
 		public boolean isFull(){
 			if(index==MAX)
@@ -135,24 +129,6 @@ import java.util.Arrays;
 			return myString;
 		}
 		
-		//Reset Method
-		public void reset(){
-			pointer = 0;
-		}
-		
-		//Has Next
-		public boolean hasNext(){
-			if(pointer<index)
-				return true;
-			else
-				return false;
-		}
-		
-		//Has Next
-		public Object getNext(){
-			pointer++;
-			return myObject[pointer-1];
-		}
 		
 		//Simple selection sort to sort the word list
 		public void sort() {
@@ -181,8 +157,6 @@ import java.util.Arrays;
 			if (index != other.index)
 				return false;
 			if (!Arrays.equals(myObject, other.myObject))
-				return false;
-			if (pointer != other.pointer)
 				return false;
 			return true;
 		}
