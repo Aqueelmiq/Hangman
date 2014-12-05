@@ -154,7 +154,7 @@ public class AMDWTestApp {
 		System.out.println();
 		
 		//WriteFile
-		AMDWWriteFile write = new AMDWWriteFile("newww.txt");
+		AMDWWriteFile write = new AMDWWriteFile("createdwordlist.txt");
 		
 		
 		System.out.println("* Write array to file:");
