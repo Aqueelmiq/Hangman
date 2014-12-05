@@ -130,8 +130,14 @@ public class TestApp {
 		//Polymorphism testing
 		Game myGame = new Game(myWord,1);
 		VersusGame vsGame = new VersusGame(myWord, falseWord, 1, 3);
+		
+		System.out.println("* toString()");
+		System.out.println("For a regular game");
 		System.out.println(myGame.toString());
+		System.out.println("For a game against AI");
 		System.out.println(vsGame.toString());
+		System.out.println();
+		System.out.println();
 		
 		
 	}
