@@ -128,6 +128,9 @@ public class TestApp {
 		//Menu testing performed externally, copied and pasted into the output file.
 		
 		//Polymorphism testing
+		Game myGame = new Game(myWord,1);
+		VersusGame vsGame = new VersusGame(myWord, falseWord, 1, 3);
+		
 		
 	}
 

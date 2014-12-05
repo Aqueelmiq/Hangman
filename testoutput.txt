@@ -1,3 +1,5 @@
+FILE OPERATIONS TESTS (from the Test application class)
+
 * Search function (isThere) for a word present in the Array
 
 We are searching for:
@@ -166,6 +168,10 @@ Current index: 6287
 Word at current index-1 position:
 unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
 
+
+MENU TESTS (individually performed, inserted from the console output).
+
+
 #######################################################################################
 
 * Choosing an unavailable option in the menu (main)
@@ -186,29 +192,149 @@ That is not a valid input, Please try again
 --------------------------------------------------
 Please enter your choice: 
 
+#######################################################################################
 
-* Choosing an unavailable option in the word list submenu
+* Choosing an unavailable option in the difficulty submenu
 
+**************************************************
+Choose difficulty level for your game
+--------------------------------------------------
+1. Easy
+2. Average
+3. Hard
+4. Quit to Main Menu
+--------------------------------------------------
+Please enter a number: 
+954y
+--------------------------------------------------
+That is not a valid input, Please try again
+--------------------------------------------------
+Please enter a number: 
 
+#######################################################################################
 
-* Choosing an unavailable option in the Test word list submenu
+* Choosing an unavailable option in the change file name submenu
 
+**************************************************
+Welcome to Hangman Game, What do you want to play?
+--------------------------------------------------
+1. Normal Game
+2. Beat the Computer
+3. Change File Name
+4. Choose a category
+5. Manipulate File Data
+6. Quit game
+--------------------------------------------------
+Please enter a number: 
+3
+**************************************************
+Enter File Name: 
+wgrreh'
+File Not Found, please try again!
+**************************************************
+**************************************************
+Welcome to Hangman Game, What do you want to play?
+--------------------------------------------------
+1. Normal Game
+2. Beat the Computer
+3. Change File Name
+4. Choose a category
+5. Manipulate File Data
+6. Quit game
+--------------------------------------------------
+Please enter a number: 
 
+#######################################################################################
 
-* Choosing an unavailable option in the Game type submenu
+* Choosing an unavailable option in the category submenu
 
+**************************************************
+Choose the specific category you want to play:
+--------------------------------------------------
+1. TOEFL
+2. SAT
+3. GRE
+4. Quit to Main Menu
+--------------------------------------------------
+Please enter a number: 
+534528bfds%%
+--------------------------------------------------
+That is not a valid input, please try again!
+--------------------------------------------------
+Please enter a number: 
 
+#######################################################################################
 
-* Choosing start game begins the chosen game
+* Choosing an unavailable option in the manipulation submenu
 
+**************************************************
+Welcome to Hangman Game, What do you want to play?
+--------------------------------------------------
+1. Normal Game
+2. Beat the Computer
+3. Change File Name
+4. Choose a category
+5. Manipulate File Data
+6. Quit game
+--------------------------------------------------
+Please enter a number: 
+5
+**************************************************
+Choose the specific category you want to play:
+--------------------------------------------------
+1. Add a Word
+2. Delete Word
+3. Search Word List
+4. Write File
+5. Quit to Main Menu
+--------------------------------------------------
+Please enter a number: 
+System.out.println("Pwned?");
+--------------------------------------------------
+That is not a valid input, please try again!
+--------------------------------------------------
+Please enter a number: 
 
+#######################################################################################
 
-* Choosing start game without proper options does nothing/isn’t possible
+* Choosing difficulty level begins the chosen game
 
+**************************************************
+Choose difficulty level for your game
+--------------------------------------------------
+1. Easy
+2. Average
+3. Hard
+4. Quit to Main Menu
+--------------------------------------------------
+Please enter a number: 
+1
+**************************************************
+Welcome to Hangman Game!
+We have chosen a word for you,
+try to guess one letter at a time
+--------------------------------------------------
+Category: TOEFL
+Guess Limit: 16
+Guesses finished: 0Word: insubordination,15,3,TOEFL,noun,defiance of authority
+Guess a Letter
 
+#######################################################################################
 
 * Choosing exit stops the program without an exception
 
+**************************************************
+Welcome to Hangman Game, What do you want to play?
+--------------------------------------------------
+1. Normal Game
+2. Beat the Computer
+3. Change File Name
+4. Choose a category
+5. Manipulate File Data
+6. Quit game
+--------------------------------------------------
+Please enter a number: 
+6
 
-
-* Finishing a game restarts the menu
+//program terminates
+#######################################################################################
