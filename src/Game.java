@@ -88,17 +88,21 @@ public class Game implements Graphics  {
 	 */
 	public void guess(char guess) {
 		boolean guessCorrect = false;
+		//Checks for correct Guess
 		for(int i=0; i<tempWord.length(); i++){
+			//If Correct do this
 			if(tempWord.charAt(i)==guess) {
 				guessCorrect = true;
 				System.out.println("Correct guess!");
 				guessedWord = guessedWord.substring(0,i) + guess + guessedWord.substring(i+1,guessedWord.length());
 			} 
 		}
+		//If wrong do this
 		if (guessCorrect == false){
 			System.out.println("Incorrect guess!");
 			guessPos++;
 		}
+		//DrawHangman and details
 		drawHangman();
 	}
 	

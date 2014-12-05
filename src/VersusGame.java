@@ -12,19 +12,18 @@ public class VersusGame extends Game {
 	//usual instance variables but this time for the computer
 	private Word gameWord2;
 	private String guessedWord2, tempWord2;
-	private int guessPos2;
-	private int guessLimit2;
-	private int pointer2;
-	private int difficulty; //set the frequency for the AI getting a correct letter
-	private char[] computerGuessPool;
+	private int guessPos2; //Computer's Guess Pos
+	private final int guessLimit2 =16; //Computer's guess limit
+	private int pointer2; //pointer to iterate
+	private char[] computerGuessPool; //The guess Pool for computer
+	int counter; //counts guess pool;
 	
 	//Non-default constructor
-	public VersusGame(Word myWord, Word myWord2, int mycategory) {
-		super(myWord, mycategory);
+	public VersusGame(Word myWord, Word myWord2, int difficulty) {
+		super(myWord, difficulty);
 		setGameWord2(myWord2);
 		tempWord2 = myWord2.getWord();
 		guessPos2 = 0;
-		guessLimit2=15;
 		this.pointer2 = 0;
 		this.guessedWord2="";
 		while(pointer2<tempWord2.length()) {
@@ -32,10 +31,12 @@ public class VersusGame extends Game {
 			pointer2++;
 			
 		}
-		int counter=0;
-		computerGuessPool = new char[(difficulty+1)*tempWord2.length()];
+		counter = 0;
+		computerGuessPool = new char[100];
+		//Generates a pool of characters for computer to guess from
+		//Now the loop generates some random characters and accurate guesses
 		for(int s=0;s<tempWord2.length(); s++) {
-			for(int t=0; t<difficulty; t++) {
+			for(int t=0; t<(difficulty); t++) {
 				Random r = new Random();
 				computerGuessPool[counter] = (char)(r.nextInt(26) + 'a');
 				counter++;
@@ -44,16 +45,7 @@ public class VersusGame extends Game {
 			counter++;
 		}
 	}
-	
-	//Non-default Constructor
-	public VersusGame(Word myWord, Word myWord2, int mycategory, int diff) {
-		super(myWord, mycategory);
-		setGameWord2(myWord2);
-		tempWord2 = myWord2.getWord();
-		setGuessPos2(0);
-		setGuessLimit2(15);
-		difficulty = diff;
-	}
+
 	
 	//Getters
 	public String getGuessedWord2() {
@@ -73,6 +65,7 @@ public class VersusGame extends Game {
 		this.tempWord2=tempWord2;
 	}
 	
+	//Draw Hang-man along with details from Computer's guess
 	@Override
 	public void drawHangman() {
 		System.out.println("-------------------Computer's Guess and Position------------------");
@@ -81,6 +74,7 @@ public class VersusGame extends Game {
 		System.out.println("----------------------Your Guess and Position---------------------");
 		System.out.println("Incorrect guesses: " + guessPos + "\nGuesses left: " + (guessLimit - guessPos) + "\nGuessed so far: " + guessedWord);
 		System.out.println("------------------------------------------------------------------");
+		//Add new Graphic in the pane
 		window.getContentPane().add(new Graphic(guessPos));
 	    window.setVisible(true);
 	}
@@ -90,6 +84,7 @@ public class VersusGame extends Game {
 	public void guess(char guess) {
 		boolean guessCorrect2 = false;
 		boolean guessCorrect = false;
+		//Checks for any correct guess
 		for(int i=0; i<tempWord.length(); i++){
 			if(tempWord.charAt(i)==guess) {
 				guessCorrect = true;
@@ -97,11 +92,13 @@ public class VersusGame extends Game {
 				guessedWord = guessedWord.substring(0,i) + guess + guessedWord.substring(i+1,guessedWord.length());
 			} 
 		}
+		//If false
 		if (guessCorrect == false){
 			System.out.println("Incorrect guess!");
 			guessPos++;
 		}
-		char computerGuess = computerGuessPool[(int) (Math.random()*computerGuessPool.length)];
+		//Computer Guessing
+		char computerGuess = computerGuessPool[(int)(Math.random()*counter)];
 		for(int i=0; i<tempWord2.length(); i++){
 			if(tempWord2.charAt(i)==computerGuess) {
 				guessCorrect2 = true;
@@ -109,10 +106,12 @@ public class VersusGame extends Game {
 				guessedWord2 = guessedWord2.substring(0,i) + computerGuess + guessedWord2.substring(i+1,guessedWord2.length());
 			} 
 		}
+		//If Computer Guesses False
 		if (guessCorrect2 == false){
 			System.out.println("Computer did an Incorrect guess!");
 			guessPos2++;
 		}
+		//DrawHangman and details
 		drawHangman();
 	}
 	
@@ -142,9 +141,5 @@ public class VersusGame extends Game {
 	
 	public int getGuessLimit2(){
 		return guessLimit2;
-	}
-	
-	public void setGuessLimit2(int guessLimit2){
-		this.guessLimit2 = guessLimit2;
 	}
 }

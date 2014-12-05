@@ -120,6 +120,8 @@ public class Menu {
 				manipulateWordList(GameHandler.getInput(5));
 				mainMenu();
 				break;
+			case 6:
+				break;
 						
 			default:
 				break;
@@ -132,9 +134,9 @@ public class Menu {
 		System.out.println("**************************************************");
 		System.out.println("Choose difficulty level for your game");
 		System.out.println("--------------------------------------------------");
-		System.out.println("1. Easy");
+		System.out.println("1. Hard");
 		System.out.println("2. Average");
-		System.out.println("3. Hard");
+		System.out.println("3. Easy");
 		System.out.println("4. Quit to Main Menu");
 		System.out.println("--------------------------------------------------");
 				
