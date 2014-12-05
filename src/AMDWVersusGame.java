@@ -8,18 +8,18 @@
 
 import java.util.*;
 
-public class AMDWVersusGame extends AMDWGame {
+public class AMDWVersusGame extends Game {
 	//usual instance variables but this time for the computer
-	private AMDWWord gameWord2;
+	private Word gameWord2;
 	private String guessedWord2, tempWord2;
 	private int guessPos2; //Computer's Guess Pos
 	private final int guessLimit2 =16; //Computer's guess limit
 	private int pointer2; //pointer to iterate
 	private char[] computerGuessPool; //The guess Pool for computer
-	int counter; //counts guess pool;
+	int counter,check; //counts guess pool;
 	
 	//Non-default constructor
-	public AMDWVersusGame(AMDWWord myWord, AMDWWord myWord2, int difficulty) {
+	public VersusGame(Word myWord, Word myWord2, int difficulty) {
 		super(myWord, difficulty);
 		setGameWord2(myWord2);
 		tempWord2 = myWord2.getWord();
@@ -44,6 +44,7 @@ public class AMDWVersusGame extends AMDWGame {
 			computerGuessPool[counter] = tempWord2.charAt(s);
 			counter++;
 		}
+		check = 0;
 	}
 
 	
@@ -75,7 +76,7 @@ public class AMDWVersusGame extends AMDWGame {
 		System.out.println("Incorrect guesses: " + guessPos + "\nGuesses left: " + (guessLimit - guessPos) + "\nGuessed so far: " + guessedWord);
 		System.out.println("------------------------------------------------------------------");
 		//Add new Graphic in the pane
-		window.getContentPane().add(new AMDWGraphic(guessPos));
+		window.getContentPane().add(new Graphic(guessPos));
 	    window.setVisible(true);
 	}
 
@@ -100,7 +101,14 @@ public class AMDWVersusGame extends AMDWGame {
 			System.out.println("Correct guess!");
 		}
 		//Computer Guessing
-		char computerGuess = computerGuessPool[(int)(Math.random()*counter)];
+		char computerGuess='\0';
+		check = (int)(Math.random()*counter);
+		computerGuess = computerGuessPool[check];
+		for(int i=check; i<counter-1; i++) {
+			computerGuessPool[i]=computerGuessPool[i+1];
+		}
+		counter--;
+		
 		for(int i=0; i<tempWord2.length(); i++){
 			if(tempWord2.charAt(i)==computerGuess) {
 				guessCorrect2 = true;
@@ -113,10 +121,28 @@ public class AMDWVersusGame extends AMDWGame {
 			guessPos2++;
 		}
 		else {
-			System.out.println("Computer did a Correct guess!");
+			System.out.println("Correct Guess");
 		}
 		//DrawHangman and details
 		drawHangman();
+	}
+	
+	public boolean endGame() {
+		if(guessedWord.compareTo(tempWord)==0) {
+			System.out.println("You Win!");
+			return true;
+		}
+		if(guessedWord2.compareTo(tempWord2)==0) {
+			System.out.println("You Loose!");
+			return true;
+		}
+		else if(guessPos<guessLimit) { 
+			return false;
+		}
+		else {
+			System.out.println("You Lose!"); 
+			return true;
+		}
 	}
 	
 	//Overridden ToString
@@ -126,11 +152,11 @@ public class AMDWVersusGame extends AMDWGame {
 	}
 	
 	//Getters
-	public AMDWWord getGameWord2() {
+	public Word getGameWord2() {
 		return gameWord2;
 	}
 
-	public void setGameWord2(AMDWWord gameWord2) {
+	public void setGameWord2(Word gameWord2) {
 		this.gameWord2 = gameWord2;
 	}
 

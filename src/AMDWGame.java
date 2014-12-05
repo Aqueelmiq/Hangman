@@ -8,10 +8,10 @@ import javax.swing.JFrame;
  * It has methods required to play the normal game
  */
 
-public class AMDWGame implements AMDWGraphics  {
+public class AMDWGame implements Graphics  {
 	
 	//instance variables to handle game data
-	private AMDWWord gameWord; //Stores the word object for manipulation
+	private Word gameWord; //Stores the word object for manipulation
 	private int category; //Stores the game category
 	protected final int guessLimit = 16; //Maximum Guesses allowed in our Hang-man game
 	protected int guessPos; //Number of incorrect guesses
@@ -20,7 +20,7 @@ public class AMDWGame implements AMDWGraphics  {
 	protected JFrame window;
 	
 	//Non default Constructor to initialize values
-	public AMDWGame(AMDWWord myWord, int category) {
+	public Game(Word myWord, int category) {
 		this.gameWord = myWord;
 		this.category = category;
 		this.guessPos = 0;
@@ -133,7 +133,7 @@ public class AMDWGame implements AMDWGraphics  {
 	public void drawHangman() {
 		System.out.println("-------------------Your Guess and Position------------------");
 		System.out.println("Incorrect guesses: " + guessPos + "\nGuesses left: " + (guessLimit - guessPos) + "\nGuessed so far: " + guessedWord);
-		window.getContentPane().add(new AMDWGraphic(guessPos));
+		window.getContentPane().add(new Graphic(guessPos));
 	    window.setVisible(true);
 		
 	}
@@ -145,8 +145,8 @@ public class AMDWGame implements AMDWGraphics  {
 	
 	//Equals
 	public boolean equals(Object obj) {
-		if(obj instanceof AMDWGame) {
-			if(gameWord.equals(((AMDWGame) obj).gameWord))
+		if(obj instanceof Game) {
+			if(gameWord.equals(((Game) obj).gameWord))
 				return true;
 			else
 				return false;
