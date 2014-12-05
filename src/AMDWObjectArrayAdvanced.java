@@ -1,3 +1,12 @@
+/*
+ * CS - 201 Final Project
+ * Hangman Game
+ * Created by Aqueel Miqdad, Dominik Wegiel
+ * ObjectArrayAdvanced is an extension to the regular ObjectArray.
+ * It adds a pointer variable for iteration, along with search
+ * and sort functionality.
+ */
+
 
 public class AMDWObjectArrayAdvanced extends AMDWObjectArray{
 	

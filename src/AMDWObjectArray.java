@@ -1,3 +1,12 @@
+/*
+ * CS - 201 Final Project
+ * Hangman Game
+ * Created by Aqueel Miqdad, Dominik Wegiel
+ * ObjectArray class is the general API for an encapsulated array
+ * of type object. In this case, it is adapted with functions for
+ * modifying and comparing instances of Word objects.
+ */
+
 import java.util.Arrays;
 
 
