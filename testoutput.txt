@@ -1,0 +1,145 @@
+* Search function (isThere) for a word present in the Array
+
+We are searching for:
+accomplished,12,3,TOEFL,adjective,settled securely and unconditionally
+Found at position: 68
+
+
+* Search function (isThere) for a word not present in the Array
+
+We are searching for:
+acco,4,4,None,noun,secure
+Found at position: -1
+
+
+* Sort (by word length) function for the array
+
+Prior to sorting by length:
+First word:
+abase,5,2,GRE,verb,cause to feel shame; hurt the pride of
+Last word:
+Harare,6,3,None,countryCapital,capital of Zimbabwe
+
+Sorting by length...
+
+After sorting by length:
+First word:
+ape,3,1,GRE,verb,imitate uncritically and in every aspect
+Last word:
+unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
+
+
+* Adding a new word to the array
+
+Current index: 6288
+Word at current index-1 position:
+unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
+
+Adding a new word at the index with the following properties:
+acco,4,4,None,noun,secure
+
+Current index: 6289
+Word at current index-1 position:
+acco,4,4,None,noun,secure
+
+
+* Inserting a new word to the array at a specific position (5)
+
+Current index: 6289
+Word at position 4:
+bar,3,1,TOEFL,verb,expel$ as if by official decree
+
+Word at position 5:
+cog,3,1,GRE,verb,roll steel ingots
+
+Word at position 6:
+coy,3,1,GRE,adjective,showing marked and often playful or irritating evasiveness or reluctance to make a definite or committing statement
+
+Adding a new word at position 5 with the following properties:
+acco,4,4,None,noun,secure
+
+Current index: 6290
+Word at position 4:
+bar,3,1,TOEFL,verb,expel$ as if by official decree
+
+Word at position 5:
+acco,4,4,None,noun,secure
+
+Word at position 6:
+coy,3,1,GRE,adjective,showing marked and often playful or irritating evasiveness or reluctance to make a definite or committing statement
+
+
+
+* Removing the first word from the array, by position
+
+Current index: 6290
+First word in the array:
+ape,3,1,GRE,verb,imitate uncritically and in every aspect
+
+Removing the first word by position...
+
+Current index: 6289
+(New) First word in the array:
+apt,3,1,SAT2,adjective,(usually followed by `to') naturally disposed toward
+
+
+* Removing the last word from the array, by object
+
+Current index: 6289
+Word at current index-1 position:
+acco,4,4,None,noun,secure
+
+Removing the last word by object...
+
+Current index: 6288
+Word at current index-1 position:
+unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
+
+
+
+#######################################################################################
+
+* Choosing an unavailable option in the menu (main)
+
+**************************************************
+Welcome to Hangman Game, What do you want to play?
+--------------------------------------------------
+1. Normal Game
+2. Beat the Computer
+3. Change File Name
+4. Choose a category
+5. Quit game
+--------------------------------------------------
+Please enter your choice: 
+9
+--------------------------------------------------
+That is not a valid input, Please try again
+--------------------------------------------------
+Please enter your choice: 
+
+
+* Choosing an unavailable option in the word list submenu
+
+
+
+* Choosing an unavailable option in the Test word list submenu
+
+
+
+* Choosing an unavailable option in the Game type submenu
+
+
+
+* Choosing start game begins the chosen game
+
+
+
+* Choosing start game without proper options does nothing/isn’t possible
+
+
+
+* Choosing exit stops the program without an exception
+
+
+
+* Finishing a game restarts the menu
