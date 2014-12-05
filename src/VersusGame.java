@@ -112,6 +112,11 @@ public class VersusGame extends Game {
 		}
 		drawHangman();
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + "Category 2: " + gameWord2.getBaseType() + "\n" + "Guess Limit 2: " + guessLimit2 + "\n" + "Guesses finished 2: " + guessPos2 + "Word 2: " + gameWord2.toString();
+	}
 
 	public Word getGameWord2() {
 		return gameWord2;
