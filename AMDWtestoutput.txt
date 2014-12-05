@@ -1,0 +1,379 @@
+FILE OPERATIONS TESTS (from the Test application class)
+
+* Search function (isThere) for a word present in the Array
+
+We are searching for:
+accomplished,12,3,TOEFL,adjective,settled securely and unconditionally
+Found at position: 68
+
+
+* Search function (isThere) for a word not present in the Array
+
+We are searching for:
+acco,4,4,None,noun,secure
+Found at position: -1
+
+
+* Sort (by word length) function for the array
+
+Prior to sorting by length:
+First word:
+abase,5,2,GRE,verb,cause to feel shame; hurt the pride of* Search function (isThere) for a word present in the Array
+
+We are searching for:
+accomplished,12,3,TOEFL,adjective,settled securely and unconditionally
+Found at position: 68
+
+
+* Search function (isThere) for a word not present in the Array
+
+We are searching for:
+acco,4,4,None,noun,secure
+Found at position: -1
+
+
+* Sort (by word length) function for the array
+
+Prior to sorting by length:
+First word:
+abase,5,2,GRE,verb,cause to feel shame; hurt the pride of
+Last word:
+Harare,6,3,None,countryCapital,capital of Zimbabwe
+
+Sorting by length...
+
+After sorting by length:
+First word:
+ape,3,1,GRE,verb,imitate uncritically and in every aspect
+Last word:
+unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
+
+
+* Adding a new word to the array
+
+Current index: 6288
+Word at current index-1 position:
+unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
+
+Adding a new word at the index with the following properties:
+acco,4,4,None,noun,secure
+
+Current index: 6289
+Word at current index-1 position:
+acco,4,4,None,noun,secure
+
+
+* Inserting a new word to the array at a specific position (5)
+
+Current index: 6289
+Word at position 4:
+bar,3,1,TOEFL,verb,expel$ as if by official decree
+
+Word at position 5:
+cog,3,1,GRE,verb,roll steel ingots
+
+Word at position 6:
+coy,3,1,GRE,adjective,showing marked and often playful or irritating evasiveness or reluctance to make a definite or committing statement
+
+Adding a new word at position 5 with the following properties:
+acco,4,4,None,noun,secure
+
+Current index: 6290
+Word at position 4:
+bar,3,1,TOEFL,verb,expel$ as if by official decree
+
+Word at position 5:
+acco,4,4,None,noun,secure
+
+Word at position 6:
+coy,3,1,GRE,adjective,showing marked and often playful or irritating evasiveness or reluctance to make a definite or committing statement
+
+
+
+* Removing the first word from the array, by position
+
+Current index: 6290
+First word in the array:
+ape,3,1,GRE,verb,imitate uncritically and in every aspect
+
+Removing the first word by position...
+
+Current index: 6289
+(New) First word in the array:
+apt,3,1,SAT2,adjective,(usually followed by `to') naturally disposed toward
+
+
+* Removing the last word from the array, by object
+
+Current index: 6289
+Word at current index-1 position:
+acco,4,4,None,noun,secure
+
+Removing the last word by object...
+
+Current index: 6288
+Word at current index-1 position:
+unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
+
+
+
+Last word:
+Harare,6,3,None,countryCapital,capital of Zimbabwe
+
+Sorting by length...
+
+After sorting by length:
+First word:
+ape,3,1,GRE,verb,imitate uncritically and in every aspect
+Last word:
+unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
+
+
+* Adding a new word to the array
+
+Current index: 6288
+Word at current index-1 position:
+unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
+
+Adding a new word at the index with the following properties:
+acco,4,4,None,noun,secure
+
+Current index: 6289
+Word at current index-1 position:
+acco,4,4,None,noun,secure
+
+
+* Removing the first word from the array, by position
+
+Current index: 6289
+First word in the array:
+ape,3,1,GRE,verb,imitate uncritically and in every aspect
+
+Removing the first word by position...
+
+Current index: 6288
+(New) First word in the array:
+apt,3,1,SAT2,adjective,(usually followed by `to') naturally disposed toward
+
+
+* Removing the last word from the array, by object
+
+Current index: 6288
+Word at current index-1 position:
+acco,4,4,None,noun,secure
+
+Removing the last word by object...
+
+Current index: 6287
+Word at current index-1 position:
+unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
+
+
+MENU TESTS (individually performed, inserted from the console output).
+
+
+#######################################################################################
+
+* Choosing an unavailable option in the menu (main)
+
+**************************************************
+Welcome to Hangman Game, What do you want to play?
+--------------------------------------------------
+1. Normal Game
+2. Beat the Computer
+3. Change File Name
+4. Choose a category
+5. Quit game
+--------------------------------------------------
+Please enter your choice: 
+9
+--------------------------------------------------
+That is not a valid input, Please try again
+--------------------------------------------------
+Please enter your choice: 
+
+#######################################################################################
+
+* Choosing an unavailable option in the difficulty submenu
+
+**************************************************
+Choose difficulty level for your game
+--------------------------------------------------
+1. Easy
+2. Average
+3. Hard
+4. Quit to Main Menu
+--------------------------------------------------
+Please enter a number: 
+954y
+--------------------------------------------------
+That is not a valid input, Please try again
+--------------------------------------------------
+Please enter a number: 
+
+#######################################################################################
+
+* Choosing an unavailable option in the change file name submenu
+
+**************************************************
+Welcome to Hangman Game, What do you want to play?
+--------------------------------------------------
+1. Normal Game
+2. Beat the Computer
+3. Change File Name
+4. Choose a category
+5. Manipulate File Data
+6. Quit game
+--------------------------------------------------
+Please enter a number: 
+3
+**************************************************
+Enter File Name: 
+wgrreh'
+File Not Found, please try again!
+**************************************************
+**************************************************
+Welcome to Hangman Game, What do you want to play?
+--------------------------------------------------
+1. Normal Game
+2. Beat the Computer
+3. Change File Name
+4. Choose a category
+5. Manipulate File Data
+6. Quit game
+--------------------------------------------------
+Please enter a number: 
+
+#######################################################################################
+
+* Choosing an unavailable option in the category submenu
+
+**************************************************
+Choose the specific category you want to play:
+--------------------------------------------------
+1. TOEFL
+2. SAT
+3. GRE
+4. Quit to Main Menu
+--------------------------------------------------
+Please enter a number: 
+534528bfds%%
+--------------------------------------------------
+That is not a valid input, please try again!
+--------------------------------------------------
+Please enter a number: 
+
+#######################################################################################
+
+* Choosing an unavailable option in the manipulation submenu
+
+**************************************************
+Welcome to Hangman Game, What do you want to play?
+--------------------------------------------------
+1. Normal Game
+2. Beat the Computer
+3. Change File Name
+4. Choose a category
+5. Manipulate File Data
+6. Quit game
+--------------------------------------------------
+Please enter a number: 
+5
+**************************************************
+Choose the specific category you want to play:
+--------------------------------------------------
+1. Add a Word
+2. Delete Word
+3. Search Word List
+4. Write File
+5. Quit to Main Menu
+--------------------------------------------------
+Please enter a number: 
+System.out.println("Pwned?");
+--------------------------------------------------
+That is not a valid input, please try again!
+--------------------------------------------------
+Please enter a number: 
+
+#######################################################################################
+
+* Choosing difficulty level begins the chosen game
+
+**************************************************
+Choose difficulty level for your game
+--------------------------------------------------
+1. Easy
+2. Average
+3. Hard
+4. Quit to Main Menu
+--------------------------------------------------
+Please enter a number: 
+1
+**************************************************
+Welcome to Hangman Game!
+We have chosen a word for you,
+try to guess one letter at a time
+--------------------------------------------------
+Category: TOEFL
+Guess Limit: 16
+Guesses finished: 0Word: insubordination,15,3,TOEFL,noun,defiance of authority
+Guess a Letter
+
+#######################################################################################
+
+* Choosing exit stops the program without an exception
+
+**************************************************
+Welcome to Hangman Game, What do you want to play?
+--------------------------------------------------
+1. Normal Game
+2. Beat the Computer
+3. Change File Name
+4. Choose a category
+5. Manipulate File Data
+6. Quit game
+--------------------------------------------------
+Please enter a number: 
+6
+
+//program terminates
+#######################################################################################
+
+
+POLYMORPHISM
+
+
+* toString()
+
+For a regular game
+Category: TOEFL
+Guess Limit: 16
+Guesses finished: 0Word: accomplished,12,3,TOEFL,adjective,settled securely and unconditionally
+
+For a game against AI
+Category: TOEFL
+Guess Limit: 16
+Guesses finished: 0Word: accomplished,12,3,TOEFL,adjective,settled securely and unconditionallyCategory 2: None
+Guess Limit 2: 15
+Guesses finished 2: 0Word 2: acco,4,4,None,noun,secure
+
+
+//POLYMORPHISM
+
+* Write array to file:
+Wrote to file
+
+(file is populated as all the elements of the array are appended)
+
+* Write word to file:
+accomplished,12,3,TOEFL,adjective,settled securely and unconditionally
+Wrote to file
+
+(word is appended as the last line of the file)
+
+* Write string to file:
+A test string
+Wrote to file
+
+(the string is appended as the last line of the file)
+

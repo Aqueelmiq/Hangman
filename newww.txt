@@ -6169,4 +6169,122 @@ wane,4,1,GRE,verb,become smaller
 doze,4,1,TOEFL,verb,sleep lightly or for a short period of time
 pity,4,1,TOEFL,noun,a feeling of sympathy and sorrow for the misfortunes of others
 boor,4,1,GRE,noun,a crude uncouth ill-bred person lacking culture or refinement
-calk,4,1,GRE,noun,a met
+calk,4,1,GRE,noun,a metal cleat on the bottom front of a horseshoe to prevent slipping
+daub,4,1,GRE,verb,cover (a surface) by smearing (a substance) over it
+tarn,4,1,GRE,noun,a mountain lake (especially one formed by glaciers)
+mire,4,1,GRE,noun,deep soft mud in water or slush
+cloy,4,1,SAT2,verb,cause surfeit through excess though initially pleasing
+wary,4,1,GRE,adjective,marked by keen caution and watchful prudence
+bald,4,1,TOEFL,adjective,lacking hair on all or most of the scalp
+taut,4,1,GRE,adjective,subjected to 1at tension; stretched tight
+waxy,4,1,TOEFL,adjective,capable of being bent or flexed or twisted without breaking
+nave,4,1,GRE,noun,the central area of a church
+rail,4,1,GRE,noun,short for railway
+wean,4,1,GRE,verb,detach the affections of
+prod,4,1,GRE,verb,urge on; cause to act
+neap,4,1,GRE,noun,a less than average tide occurring at the first and third quarters of the moon
+welt,4,1,GRE,verb,beat severely with a whip or rod
+Oslo,4,1,None,countryCapital,capital of Norway
+hint,4,1,TOEFL,noun,a slight indication
+sect,4,1,SAT2,noun,a subdivision of a larger religious group
+teem,4,1,GRE,verb,move in large numbers
+whet,4,1,GRE,verb,sharpen by rubbing$ as on a whetstone
+Lima,4,2,None,countryCapital,capital of Peru
+opus,4,1,GRE,noun,a musical work that has been created
+deem,4,1,SAT2,verb,keep in mind or convey as a conviction or view
+whit,4,1,GRE,noun,a tiny or scarcely detectable amount
+ramp,4,1,GRE,verb,creep up -- used especially of plants
+Doha,4,3,None,countryCapital,capital of Qatar
+flag,4,1,GRE,verb,decorate with flags
+wile,4,1,TOEFL,noun,the use of tricks to deceive someone (usually to extract money from them)
+akin,4,1,TOEFL,adjective,similar in quality or character
+wily,4,1,GRE,adjective,marked by skill in deception
+mall,4,1,GRE,noun,a public area set aside as a pedestrian walk
+plea,4,1,TOEFL,noun,an answer indicating why a suit should be dismissed
+balk,4,1,GRE,noun,an illegal pitching motion while runners are on base
+gash,4,1,TOEFL,noun,a trench resembling a furrow that was made by erosion or excavation
+hoax,4,1,GRE,noun,something intended to deceive; deliberate trickery intended to gain an advantage
+rant,4,1,GRE,noun,pompous or pretentious talk or writing
+bask,4,1,GRE,verb,derive or receive pleasure from; get enjoyment from; take pleasure in
+Apia,4,3,None,countryCapital,capital of Samoa
+avow,4,1,GRE,verb,to declare or affirm solemnly and formally as true
+bump,4,1,TOEFL,verb,come upon$ as if by accident; meet with
+emit,4,1,GRE,verb,express audibly; utter sounds (not necessarily words)
+neon,4,1,TOEFL,noun,a colorless odorless gaseous element that give a red glow in a vacuum tube; one of the six inert gasses; occurs in the air in small amounts
+diva,4,1,GRE,noun,a distinguished female operatic singer; a female operatic star
+rash,4,1,TOEFL,adjective,marked by defiant disregard for danger or consequences
+wont,4,1,GRE,noun,an established custom
+cite,4,1,GRE,noun,a short note recognizing a source of information or of a quoted passage
+flay,4,1,GRE,verb,strip the skin off
+stem,4,1,GRE,noun,the tube of a tobacco pipe
+levy,4,1,GRE,verb,To impose or collect (a tax$ for example).
+lewd,4,1,GRE,adjective,driven by lust; preoccupied with or exhibiting lustful desires
+peek,4,1,TOEFL,verb,throw a glance at; take a brief look at
+peer,4,1,GRE,noun,a nobleman (duke or marquis or earl or viscount or baron) who is a member of the British peerage
+coda,4,1,GRE,noun,the closing section of a musical composition
+pelf,4,1,GRE,noun,informal terms for money
+rave,4,1,GRE,noun,a dance party that lasts all night and electronically synthesized music is played
+Juba,4,3,None,countryCapital,capital of South Sudan South Sudan
+yelp,4,1,TOEFL,noun,a sharp high-pitched cry (especially by a dog)
+nice,4,1,GRE,adjective,socially or conventionally correct; refined or virtuous
+fowl,4,1,TOEFL,noun,a domesticated gallinaceous bird thought to be descended from the red jungle fowl
+yoke,4,1,GRE,noun,stable gear that joins two draft animals at the neck so they can work together as a team
+send,4,1,GRE,verb,cause to go somewhere
+Bern,4,2,None,countryCapital,capital of Switzerland
+raze,4,1,GRE,verb,tear down so as to make flat with the ground
+brim,4,1,TOEFL,verb,be completely full
+ally,4,1,GRE,verb,become an ally or associate$ as by a treaty or marriage
+gust,4,1,TOEFL,noun,a strong current of air
+flee,4,1,TOEFL,verb,run away quickly
+oust,4,1,GRE,verb,remove and replace
+crux,4,1,GRE,noun,the most important point
+hone,4,1,GRE,verb,sharpen with a hone
+bate,4,1,GRE,verb,soak in a special solution to soften and remove chemicals used in previous treatments
+prop,4,1,TOEFL,noun,a support placed beneath or against something to keep it from shaking or falling
+Kiev,4,2,None,countryCapital,capital of Ukraine
+apex,4,1,GRE,noun,the highest point (of something)
+e1ss,4,2,GRE,verb,come out of
+mare,4,1,TOEFL,noun,female equine animal
+faux,4,1,SAT2,adjective,not genuine or real; being an imitation of the genuine article
+sere,4,1,GRE,adjective,(used especially of vegetation) having lost all moisture
+mite,4,1,GRE,noun,a slight but appreciable amount
+peon,4,1,GRE,noun,a laborer who is obliged to do menial work
+lieu,4,1,GRE,noun,the post or function properly or customarily occupied or served by another
+lift,4,1,TOEFL,noun,a wave that lifts the surface of the water or ground
+cog,3,1,GRE,verb,roll steel ingots
+awe,3,1,GRE,verb,inspire awe in
+yen,3,1,GRE,verb,have a desire for something or someone who is not present
+rue,3,1,GRE,verb,feel remorse for; feel sorry for; be contrite about
+tug,3,1,TOEFL,verb,strive and make an effort to reach a goal
+ape,3,1,GRE,verb,imitate uncritically and in every aspect
+die,3,1,GRE,verb,lose sparkle or bouquet
+lax,3,1,GRE,adjective,pronounced with muscles of the tongue and jaw relatively relaxed (e.g.$ the vowel sound in `bet')
+coy,3,1,GRE,adjective,showing marked and often playful or irritating evasiveness or reluctance to make a definite or committing statement
+wan,3,1,GRE,adjective,(of light) lacking in intensity or brightness; dim or feeble
+lid,3,1,TOEFL,noun,headdress that protects the head from bad weather; has shaped crown and usually a brim
+toy,3,1,GRE,verb,manipulate manually or in one's mind or imagination
+vex,3,1,GRE,verb,disturb the peace of mind of; afflict with mental agitation or distress
+ken,3,1,GRE,noun,the range of vision
+gig,3,1,GRE,noun,tender that is a light ship's boat; often for personal use of captain
+bar,3,1,TOEFL,verb,expel$ as if by official decree
+eon,3,1,GRE,noun,(Gnosticism) a divine power or nature emanating from the Supreme Being and playing various roles in the operation of the universe
+hap,3,1,GRE,noun,an accidental happening
+hew,3,1,GRE,verb,strike with an axe; cut down$ strike
+sip,3,1,TOEFL,verb,drink in sips
+vie,3,1,GRE,verb,compete for something; engage in a contest; measure oneself against others
+lag,3,1,GRE,verb,hang (back) or fall (behind) in movement$ pro1ss$ development$ etc.
+wax,3,1,GRE,verb,cover with wax
+woe,3,1,SAT2,noun,intense mournfulness
+nib,3,1,GRE,noun,horny projecting mouth of a bird
+ebb,3,1,GRE,noun,the outward flow of the tide
+apt,3,1,SAT2,adjective,(usually followed by `to') naturally disposed toward
+din,3,1,GRE,verb,instill (into a person) by constant repetition
+oaf,3,1,GRE,noun,an awkward stupid person
+sap,3,1,GRE,noun,a watery solution of sugars$ salts$ and minerals that circulates through the vascular system of a plant
+sue,3,1,TOEFL,verb,institute legal proceedings against; file a suit against
+hoe,3,1,TOEFL,verb,dig with a hoe
+ban,3,1,TOEFL,noun,a bachelor's de1e in nursing
+gem,3,1,TOEFL,noun,a precious or semiprecious stone incorporated into a piece of jewelry
+wry,3,1,GRE,adjective,humorously sarcastic or mocking
+accomplished,12,3,TOEFL,adjective,settled securely and unconditionally
+A test string

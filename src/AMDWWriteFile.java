@@ -26,14 +26,17 @@ public class AMDWWriteFile {
 	//writes a specific string to the output file
 	public void writeLine(String toWrite) throws IOException{
 		fWriter.write(toWrite + "\n");
+		fWriter.flush();
 	}
 	//writes an object to the output file
 	public void writeLine(Object obj) throws IOException{
 		fWriter.write(obj.toString() + "\n");
+		fWriter.flush();
 	}
 	
 	//writes the array from first element to the index into output file
 	public void writeArray(AMDWObjectArrayAdvanced objArr) throws IOException{
-			fWriter.write(objArr.toString());
+		fWriter.write(objArr.toString());
+		fWriter.flush();
 	}
 }

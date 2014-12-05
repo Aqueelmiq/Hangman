@@ -154,12 +154,30 @@ public class AMDWTestApp {
 		System.out.println();
 		
 		//WriteFile
-		AMDWWriteFile write = new AMDWWriteFile("neww.txt");
+		AMDWWriteFile write = new AMDWWriteFile("newww.txt");
 		
-		write.writeLine(myWord);
-		System.out.println("Write array to file:");
-		//write.writeArray((ObjectArrayAdvanced) wordArr);
+		
+		System.out.println("* Write array to file:");
+		write.writeArray((AMDWObjectArrayAdvanced) wordArr);
 		System.out.println("Wrote to file");
+		System.out.println();
+		System.out.println();
+		
+		System.out.println("* Write word to file:");
+		System.out.println(myWord.toString());
+		write.writeLine(myWord);
+		System.out.println("Wrote to file");
+		System.out.println();
+		System.out.println();
+		
+		String test = "A test string";
+		System.out.println("* Write string to file:");
+		System.out.println(test);
+		write.writeLine(test);
+		System.out.println("Wrote to file");
+		System.out.println();
+		System.out.println();
+		
 	}
 
 }
