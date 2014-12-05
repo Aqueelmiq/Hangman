@@ -21,16 +21,16 @@ public class AMDWMenu {
     private int difficulty; //stores Difficulty level and category of the word
     private String userInput; //Stores any user input
     private String filename="dco.txt"; //stores filename, default filename set
-    private ReadFile reader; //Reader class instance to read the filename
-    private ObjectArrayAdvanced wordArr; //Word Array instance to store the file name
-    private WriteFile writer;
+    private AMDWReadFile reader; //Reader class instance to read the filename
+    private AMDWObjectArrayAdvanced wordArr; //Word Array instance to store the file name
+    private AMDWWriteFile writer;
     
     //Default constructor assigns null or 0 values to all variable in the beginning if constructor is called
-    public Menu() {
+    public AMDWMenu() {
         difficulty = 0;
         userInput = "";
         try {
-            reader = new ReadFile(filename);
+            reader = new AMDWReadFile(filename);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -55,7 +55,7 @@ public class AMDWMenu {
         System.out.println("--------------------------------------------------");
         
         //Calling getInput() to get a valid userInput under or equal to 4
-        menuChoice = GameHandler.getInput(6);
+        menuChoice = AMDWGameHandler.getInput(6);
         
         //The switch statement uses the userInput to navigate to the right function to start the game
         switch(menuChoice) {
@@ -97,7 +97,7 @@ public class AMDWMenu {
                 System.out.println("4. Write File");
                 System.out.println("5. Quit to Main Menu");
                 System.out.println("--------------------------------------------------");
-                manipulateWordList(GameHandler.getInput(5));
+                manipulateWordList(AMDWGameHandler.getInput(5));
                 mainMenu();
                 break;
                 
@@ -122,7 +122,7 @@ public class AMDWMenu {
         System.out.println("--------------------------------------------------");
         
         //Calling getInput() to get a valid userInput under or equal to 4
-        difficulty = GameHandler.getInput(4);
+        difficulty = AMDWGameHandler.getInput(4);
         
         //if user presses 4, go back to main menu, Uses recursion here
         if(difficulty == 4)
@@ -134,7 +134,7 @@ public class AMDWMenu {
         Scanner in = new Scanner(System.in);
         switch(input) {
             case 1:
-                Word myWord = new Word();
+                AMDWWord myWord = new AMDWWord();
                 System.out.println("**************************************************");
                 System.out.println("Please enter the details of the word one by one");
                 System.out.println("--------------------------------------------------");
@@ -142,7 +142,7 @@ public class AMDWMenu {
                 myWord.setWord(in.nextLine());
                 myWord.setLength(myWord.getWord().length());
                 System.out.println("Enter the difficculty:");
-                myWord.setDifficulty(GameHandler.getInput(3));
+                myWord.setDifficulty(AMDWGameHandler.getInput(3));
                 System.out.println("Enter the explanation:");
                 myWord.setExplanation(in.nextLine());
                 System.out.println("Enter the type of word: ");
@@ -162,11 +162,11 @@ public class AMDWMenu {
                 System.out.println("--------------------------------------------------");
                 System.out.println("1. Delete by position");
                 System.out.println("2. Delete by word name");
-                int choice = GameHandler.getInput(2);
+                int choice = AMDWGameHandler.getInput(2);
                 if(choice == 1) {
                     System.out.println("--------------------------------------------------");
                     System.out.println("Please enter your pos");
-                    wordArr.delete(GameHandler.getInput(wordArr.getIndex()));
+                    wordArr.delete(AMDWGameHandler.getInput(wordArr.getIndex()));
                     System.out.println("Word Deleted");
                     System.out.println("--------------------------------------------------");
                 }
@@ -185,18 +185,18 @@ public class AMDWMenu {
                 System.out.println("--------------------------------------------------");
                 System.out.println("1. Search by position");
                 System.out.println("2. Search by word name");
-                int choice2 = GameHandler.getInput(2);
+                int choice2 = AMDWGameHandler.getInput(2);
                 if(choice2 == 1) {
                     System.out.println("--------------------------------------------------");
                     System.out.println("Please enter your pos");
-                    System.out.println(((Word)wordArr.getAtPos(GameHandler.getInput(wordArr.getIndex()))).toString());
+                    System.out.println(((AMDWWord)wordArr.getAtPos(AMDWGameHandler.getInput(wordArr.getIndex()))).toString());
                     System.out.println("--------------------------------------------------");
                 }
                 else {
                     System.out.println("--------------------------------------------------");
                     System.out.println("Please enter your Word");
                     if((wordArr.seqSearch(userInput = in.nextLine().toLowerCase()))>0)
-                        System.out.println(((Word)(wordArr.getAtPos(wordArr.seqSearch(userInput)))).toString());
+                        System.out.println(((AMDWWord)(wordArr.getAtPos(wordArr.seqSearch(userInput)))).toString());
                     else
                         System.out.print("Word Not Found");
                     System.out.println("--------------------------------------------------");
@@ -206,7 +206,7 @@ public class AMDWMenu {
             case 4:
                 //Writes File
                 try {
-                    writer = new WriteFile();
+                    writer = new AMDWWriteFile();
                     writer.writeArray(wordArr);
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -225,7 +225,7 @@ public class AMDWMenu {
     public void setFileName(String fileName) throws FileNotFoundException {
         filename = fileName;
         try {
-            reader = new ReadFile(filename);
+            reader = new AMDWReadFile(filename);
             wordArr = reader.storeObjects();
             System.out.println("New File name set, Thank You.");
         } catch (FileNotFoundException e) {
@@ -241,7 +241,7 @@ public class AMDWMenu {
         System.out.println("Welcome to Hangman Game!");
         System.out.println("We have chosen a word for you,\ntry to guess one letter at a time");
         System.out.println("--------------------------------------------------");
-        GameHandler.playMainGame(difficulty, wordArr);
+        AMDWGameHandler.playMainGame(difficulty, wordArr);
         mainMenu();
     }
     
@@ -251,7 +251,7 @@ public class AMDWMenu {
         System.out.println("Welcome to Hangman Game!");
         System.out.println("We have chosen a word for you,\ntry to guess one letter at a time");
         System.out.println("--------------------------------------------------");
-        GameHandler.playVersusGame(difficulty, wordArr);
+        AMDWGameHandler.playVersusGame(difficulty, wordArr);
         mainMenu();
         
     }
