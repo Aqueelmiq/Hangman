@@ -1,7 +1,6 @@
-import java.io.BufferedWriter;
+//import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /*
  * CS - 201 Final Project
@@ -35,6 +34,6 @@ public class WriteFile {
 	
 	//writes the array from first element to the index into output file
 	public void writeArray(ObjectArrayAdvanced objArr) throws IOException{
-			fWriter.write(objArr.toString() + "\n");
+			fWriter.write(objArr.toString());
 	}
 }

@@ -88,7 +88,6 @@ public class VersusGame extends Game {
 		for(int i=0; i<tempWord.length(); i++){
 			if(tempWord.charAt(i)==guess) {
 				guessCorrect = true;
-				System.out.println("Correct guess!");
 				guessedWord = guessedWord.substring(0,i) + guess + guessedWord.substring(i+1,guessedWord.length());
 			} 
 		}
@@ -97,12 +96,14 @@ public class VersusGame extends Game {
 			System.out.println("Incorrect guess!");
 			guessPos++;
 		}
+		else {
+			System.out.println("Correct guess!");
+		}
 		//Computer Guessing
 		char computerGuess = computerGuessPool[(int)(Math.random()*counter)];
 		for(int i=0; i<tempWord2.length(); i++){
 			if(tempWord2.charAt(i)==computerGuess) {
 				guessCorrect2 = true;
-				System.out.println("Computer did a Correct guess!");
 				guessedWord2 = guessedWord2.substring(0,i) + computerGuess + guessedWord2.substring(i+1,guessedWord2.length());
 			} 
 		}
@@ -110,6 +111,9 @@ public class VersusGame extends Game {
 		if (guessCorrect2 == false){
 			System.out.println("Computer did an Incorrect guess!");
 			guessPos2++;
+		}
+		else {
+			System.out.println("Computer did a Correct guess!");
 		}
 		//DrawHangman and details
 		drawHangman();

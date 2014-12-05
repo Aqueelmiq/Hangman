@@ -93,7 +93,6 @@ public class Game implements Graphics  {
 			//If Correct do this
 			if(tempWord.charAt(i)==guess) {
 				guessCorrect = true;
-				System.out.println("Correct guess!");
 				guessedWord = guessedWord.substring(0,i) + guess + guessedWord.substring(i+1,guessedWord.length());
 			} 
 		}
@@ -101,6 +100,9 @@ public class Game implements Graphics  {
 		if (guessCorrect == false){
 			System.out.println("Incorrect guess!");
 			guessPos++;
+		}
+		else {
+			System.out.println("Correct guess!");
 		}
 		//DrawHangman and details
 		drawHangman();

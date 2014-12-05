@@ -8,6 +8,7 @@
 public class ApplicationClass {
 
 	public static void main(String[] args) {
+		//Execute Menu
 		Menu menu = new Menu();
 		menu.mainMenu();
 

@@ -2,8 +2,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
-
 /*
  * CS - 201 Final Project
  * Hangman Game
@@ -31,7 +29,8 @@ public class GameHandler {
 		int random = (int) (((difficulty-1)*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
 		Word myWord = ((Word)wordArr.getAtPos(random));
 		Game hangman = new Game(myWord, difficulty);
-		System.out.println(hangman.toString());
+		System.out.println("Word to Guess: " + hangman.getGuessedWord());
+		//System.out.println(hangman.toString());
 		//Game begins
 		while(!hangman.endGame()) {
 			hangman.guess(getCharInput());
@@ -52,7 +51,8 @@ public class GameHandler {
 		int random = (int) (((difficulty-1)*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
 		Word myWord = ((Word)wordArr.getAtPos(random)), myWord2 = ((Word)wordArr.getAtPos(random+1));
 		VersusGame hangman2 = new VersusGame(myWord, myWord2, difficulty);
-		System.out.println(hangman2.toString());
+		System.out.println("Word to Guess: " + hangman2.getGuessedWord());
+		//System.out.println(hangman2.toString());
 		//Game begins
 		while(!hangman2.endGame()) {
 			hangman2.guess(getCharInput());
