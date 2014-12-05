@@ -1,5 +1,8 @@
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.util.Scanner;
 
 /*
  * CS - 201 Final Project
@@ -14,11 +17,23 @@ public class AMDWTestApp {
 	
 	public static void main(String[] args) throws IOException{
 		//instantiation of variables
+		Scanner in = new Scanner(System.in);
 		String filename = "dco.txt";
 		AMDWReadFile reader = new AMDWReadFile(filename); //read in our input file
 		AMDWObjectArray wordArr = reader.storeObjects(); //create an array of Word objects from our input file
 		AMDWWord myWord = new AMDWWord("accomplished",3,5,"adjective","settled securely and unconditionally"); //a word contained in our data file (should be found)
 		AMDWWord falseWord = new AMDWWord("acco",4,8,"noun","secure"); //a word not contained in our data file (should not be found)
+		
+		System.out.println("Please enter the name of the file you wish to write to, leave blank to print to console: ");
+		String fileNameWrite = in.nextLine();
+		
+		//check the length of the filename provided, and either write to console or to file.
+		if (fileNameWrite.length() > 0){
+			PrintStream out = new PrintStream(new FileOutputStream(fileNameWrite));
+			System.setOut(out);
+		}
+		
+		//DATA MODIFICATION AND INVESTIGATION FUNCTIONS
 		
 		System.out.println("* Search function (isThere) for a word present in the Array");
 		System.out.println();
@@ -129,6 +144,7 @@ public class AMDWTestApp {
 		//Menu testing performed externally, copied and pasted into the output file.
 		
 		//Polymorphism testing
+		
 		AMDWGame myGame = new AMDWGame(myWord,1);
 		AMDWVersusGame vsGame = new AMDWVersusGame(myWord, falseWord, 1);
 		
@@ -154,6 +170,8 @@ public class AMDWTestApp {
 		System.out.println();
 		
 		//WriteFile
+		
+		
 		AMDWWriteFile write = new AMDWWriteFile("createdwordlist.txt");
 		
 		
