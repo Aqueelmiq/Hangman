@@ -338,3 +338,23 @@ Please enter a number:
 
 //program terminates
 #######################################################################################
+
+
+POLYMORPHISM
+
+
+* toString()
+
+For a regular game
+Category: TOEFL
+Guess Limit: 16
+Guesses finished: 0Word: accomplished,12,3,TOEFL,adjective,settled securely and unconditionally
+
+For a game against AI
+Category: TOEFL
+Guess Limit: 16
+Guesses finished: 0Word: accomplished,12,3,TOEFL,adjective,settled securely and unconditionallyCategory 2: None
+Guess Limit 2: 15
+Guesses finished 2: 0Word 2: acco,4,4,None,noun,secure
+
+

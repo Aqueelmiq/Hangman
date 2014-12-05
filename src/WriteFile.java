@@ -13,8 +13,8 @@ import java.io.PrintWriter;
 
 public class WriteFile {
 	FileWriter fWriter;
-	BufferedWriter bWriter = new BufferedWriter(fWriter);
-	PrintWriter out = new PrintWriter(bWriter);
+	//BufferedWriter bWriter = new BufferedWriter(fWriter);
+	//PrintWriter out = new PrintWriter(bWriter);
 	
 	public WriteFile() throws IOException{ //default constructor, uses "defaultoutput.txt" as the file to write to
 		fWriter = new FileWriter("defaultoutput.txt",true);
@@ -25,18 +25,16 @@ public class WriteFile {
 	}
 	
 	//writes a specific string to the output file
-	public void writeLine(String toWrite){
-		out.println(toWrite);
+	public void writeLine(String toWrite) throws IOException{
+		fWriter.write(toWrite + "\n");
 	}
 	//writes an object to the output file
-	public void writeLine(Object obj){
-		out.println(obj.toString());
+	public void writeLine(Object obj) throws IOException{
+		fWriter.write(obj.toString() + "\n");
 	}
 	
 	//writes the array from first element to the index into output file
-	public void writeArray(ObjectArrayAdvanced objArr){
-		for (int i=0; i<objArr.getIndex(); i++){
-			out.println(objArr.toString());
-		}
+	public void writeArray(ObjectArrayAdvanced objArr) throws IOException{
+			fWriter.write(objArr.toString() + "\n");
 	}
 }

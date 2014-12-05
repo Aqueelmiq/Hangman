@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /*
  * CS - 201 Final Project
@@ -11,7 +12,7 @@ import java.io.FileNotFoundException;
 
 public class TestApp {
 	
-	public static void main(String[] args) throws FileNotFoundException{
+	public static void main(String[] args) throws IOException{
 		//instantiation of variables
 		String filename = "dco.txt";
 		ReadFile reader = new ReadFile(filename); //read in our input file
@@ -129,19 +130,36 @@ public class TestApp {
 		
 		//Polymorphism testing
 		Game myGame = new Game(myWord,1);
-		VersusGame vsGame = new VersusGame(myWord, falseWord, 1, 3);
+		VersusGame vsGame = new VersusGame(myWord, falseWord, 1);
 		
 		System.out.println("* toString()");
+		System.out.println();
 		System.out.println("For a regular game");
 		System.out.println(myGame.toString());
+		System.out.println();
 		System.out.println("For a game against AI");
 		System.out.println(vsGame.toString());
 		System.out.println();
 		System.out.println();
 		
+		System.out.println("* guess()");
+		System.out.println();
+		System.out.println("For a regular game");
+		myGame.guess('b');
+		System.out.println();
+		System.out.println("For a game against AI");
+		vsGame.guess('b');
+		System.out.println();
+		System.out.println();
+		System.out.println();
 		
+		//WriteFile
+		WriteFile write = new WriteFile();
 		
-		
+		write.writeLine(myWord);
+		System.out.println("Write array to file:");
+		//write.writeArray((ObjectArrayAdvanced) wordArr);
+		System.out.println("Wrote to file");
 	}
 
 }
