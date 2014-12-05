@@ -16,6 +16,24 @@ Found at position: -1
 
 Prior to sorting by length:
 First word:
+abase,5,2,GRE,verb,cause to feel shame; hurt the pride of* Search function (isThere) for a word present in the Array
+
+We are searching for:
+accomplished,12,3,TOEFL,adjective,settled securely and unconditionally
+Found at position: 68
+
+
+* Search function (isThere) for a word not present in the Array
+
+We are searching for:
+acco,4,4,None,noun,secure
+Found at position: -1
+
+
+* Sort (by word length) function for the array
+
+Prior to sorting by length:
+First word:
 abase,5,2,GRE,verb,cause to feel shame; hurt the pride of
 Last word:
 Harare,6,3,None,countryCapital,capital of Zimbabwe
@@ -96,6 +114,57 @@ Word at current index-1 position:
 unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
 
 
+
+Last word:
+Harare,6,3,None,countryCapital,capital of Zimbabwe
+
+Sorting by length...
+
+After sorting by length:
+First word:
+ape,3,1,GRE,verb,imitate uncritically and in every aspect
+Last word:
+unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
+
+
+* Adding a new word to the array
+
+Current index: 6288
+Word at current index-1 position:
+unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
+
+Adding a new word at the index with the following properties:
+acco,4,4,None,noun,secure
+
+Current index: 6289
+Word at current index-1 position:
+acco,4,4,None,noun,secure
+
+
+* Removing the first word from the array, by position
+
+Current index: 6289
+First word in the array:
+ape,3,1,GRE,verb,imitate uncritically and in every aspect
+
+Removing the first word by position...
+
+Current index: 6288
+(New) First word in the array:
+apt,3,1,SAT2,adjective,(usually followed by `to') naturally disposed toward
+
+
+* Removing the last word from the array, by object
+
+Current index: 6288
+Word at current index-1 position:
+acco,4,4,None,noun,secure
+
+Removing the last word by object...
+
+Current index: 6287
+Word at current index-1 position:
+unconventionality,17,3,GRE,noun,originality by virtue of being unconventional
 
 #######################################################################################
 
