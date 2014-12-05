@@ -73,6 +73,15 @@ import java.util.Arrays;
 	        	   
 	    } //searches for anObj and deletes if found
 	    
+	    public void delete(String word){
+	    	int pos;
+	    	if((pos=isThere(myObj))!=-1){
+	    		delete(pos);
+	    	}
+	    	else{
+	    		System.out.println("Object not found");
+	    	}
+	    
 		public boolean isFull(){
 			if(index==MAX)
 				return true;

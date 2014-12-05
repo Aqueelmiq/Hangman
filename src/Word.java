@@ -21,6 +21,17 @@ public class Word {
 	 * 1.'gre', 2.'gre_hf', 3.'sat1', 4.'sat2', 5.'toefl', 6.'toefl_hf', 7.'trial'
 	 */
 	
+	//Default Constructor for initializing a blank Word object
+	public Word() {
+		wordContent ="";
+		length = 0;
+		difficulty = 0;
+		type ="";
+		explanation = "";
+		baseType ="";
+		category = 0;
+	}
+	
 	//Non Default constructor below. The switch statement converts the input numeric category into text Category.
 	public Word(String word,String type,String explanation,int category) {
 		this.wordContent=word;
@@ -62,6 +73,7 @@ public class Word {
 		this.baseType=wordType;
 	}
 	
+	//Non-default COnstructor used for test purposes only
 	public Word(String currentWord, int wordDiff, int wordCat, String wordType, String wordDef) {
 		this.wordContent=currentWord;
 		this.category=wordCat;
