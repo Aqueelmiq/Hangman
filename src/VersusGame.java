@@ -81,8 +81,11 @@ public class VersusGame extends Game {
 		System.out.println("----------------------Your Guess and Position---------------------");
 		System.out.println("Incorrect guesses: " + guessPos + "\nGuesses left: " + (guessLimit - guessPos) + "\nGuessed so far: " + guessedWord);
 		System.out.println("------------------------------------------------------------------");
+		window.getContentPane().add(new Graphic(guessPos));
+	    window.setVisible(true);
 	}
 
+	//Overridden Guess method to include computer Guess as well
 	@Override
 	public void guess(char guess) {
 		boolean guessCorrect2 = false;
@@ -98,7 +101,7 @@ public class VersusGame extends Game {
 			System.out.println("Incorrect guess!");
 			guessPos++;
 		}
-		char computerGuess = computerGuessPool[(int) (Math.random()*computerGuessPool.length)+1];
+		char computerGuess = computerGuessPool[(int) (Math.random()*computerGuessPool.length)];
 		for(int i=0; i<tempWord2.length(); i++){
 			if(tempWord2.charAt(i)==computerGuess) {
 				guessCorrect2 = true;
@@ -113,11 +116,13 @@ public class VersusGame extends Game {
 		drawHangman();
 	}
 	
+	//Overridden ToString
 	@Override
 	public String toString() {
 		return super.toString() + "Category 2: " + gameWord2.getBaseType() + "\n" + "Guess Limit 2: " + guessLimit2 + "\n" + "Guesses finished 2: " + guessPos2 + "Word 2: " + gameWord2.toString();
 	}
-
+	
+	//Getters
 	public Word getGameWord2() {
 		return gameWord2;
 	}
@@ -129,7 +134,8 @@ public class VersusGame extends Game {
 	public int getGuessPos2() {
 		return guessPos2;
 	}
-
+	
+	//Setters
 	public void setGuessPos2(int guessPos2) {
 		this.guessPos2 = guessPos2;
 	}

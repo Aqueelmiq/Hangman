@@ -1,15 +1,15 @@
-import java.io.FileNotFoundException;
-
+/*
+ * CS - 201 Final Project
+ * Hangman Game
+ * Created by Aqueel Miqdad, Dominik Wegiel
+ * Executes the Menu and starts the application
+ */
 
 public class ApplicationClass {
 
 	public static void main(String[] args) {
 		Menu menu = new Menu();
-		try {
-			menu.mainMenu();
-		} catch (FileNotFoundException e) {
-			System.out.println("Please check if ou have the default file loaded in the source folder");
-		}
+		menu.mainMenu();
 
 	}
 

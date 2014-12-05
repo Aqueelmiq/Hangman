@@ -127,7 +127,7 @@ public class Game implements Graphics  {
 	public void drawHangman() {
 		System.out.println("-------------------Your Guess and Position------------------");
 		System.out.println("Incorrect guesses: " + guessPos + "\nGuesses left: " + (guessLimit - guessPos) + "\nGuessed so far: " + guessedWord);
-		window.getContentPane().add(new Graphic(guessPos, guessedWord));
+		window.getContentPane().add(new Graphic(guessPos));
 	    window.setVisible(true);
 		
 	}

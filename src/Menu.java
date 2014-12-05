@@ -11,6 +11,7 @@
 
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 //Importing java libraries needed for the class
 import java.util.*;
 
@@ -21,16 +22,23 @@ public class Menu {
 	private String userInput; //Stores any user input
 	private String filename="dco.txt"; //stores filename, default filename set
 	private ReadFile reader; //Reader class instance to read the filename
-	ObjectArrayAdvanced wordArr; //Word Array instance to store the file name
+	private ObjectArrayAdvanced wordArr; //Word Array instance to store the file name
+	private WriteFile writer;
 	
 	//Default constructor assigns null or 0 values to all variable in the beginning if constructor is called
 	public Menu() {
 		difficulty = 0;
 		userInput = "";
+		try {
+			reader = new ReadFile(filename);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		wordArr = reader.storeObjects();
 	}
 
 	//Displays and handles Main Menu of the game
-	public void mainMenu() throws FileNotFoundException{
+	public void mainMenu() {
 		
 		Scanner in = new Scanner(System.in);
 		
@@ -56,11 +64,13 @@ public class Menu {
 				chooseDifficulty();
 				normalMainMenu();
 				//calling normal game menu
+				mainMenu();
 				break;
 				
 			case 2:
 				chooseDifficulty();
 				versusMenu();
+				mainMenu();
 				//calling versus game menu
 				break;
 				
@@ -69,7 +79,11 @@ public class Menu {
 				System.out.println("Enter File Name: ");
 				userInput = in.nextLine();
 				//calling function to set filename
+				try {
 				setFileName(userInput);
+				} catch (FileNotFoundException e) {
+				e.printStackTrace();
+				}
 				//calling main menu after, file is set
 				mainMenu();
 				break;
@@ -90,6 +104,7 @@ public class Menu {
 				
 				//Calling getInput() to get a valid userInput under or equal to 4
 				category = GameHandler.getInput(4);
+				mainMenu();
 				break;
 				
 			case 5: 
@@ -103,6 +118,7 @@ public class Menu {
 				System.out.println("5. Quit to Main Menu");
 				System.out.println("--------------------------------------------------");
 				manipulateWordList(GameHandler.getInput(5));
+				mainMenu();
 				break;
 						
 			default:
@@ -112,7 +128,7 @@ public class Menu {
 
 	}
 	//Difficulty level chooser
-	public void chooseDifficulty() throws FileNotFoundException{
+	public void chooseDifficulty() {
 		System.out.println("**************************************************");
 		System.out.println("Choose difficulty level for your game");
 		System.out.println("--------------------------------------------------");
@@ -132,8 +148,7 @@ public class Menu {
 	}
 	
 	public void manipulateWordList(int input) {
-		Scanner in = new Scanner(System.in)
-		;
+		Scanner in = new Scanner(System.in);
 		switch(input) {
 		case 1:
 			Word myWord = new Word();
@@ -151,10 +166,12 @@ public class Menu {
 			myWord.setType(in.nextLine());
 			System.out.println("Enter the exam type: ");
 			myWord.setBaseType(in.nextLine());
+			System.out.println("Enter the exam type: ");
 			wordArr.add(myWord);
 			System.out.println("--------------------------------------------------");
 			System.out.println("Word Added at: " + wordArr.getIndex() + " pos.");
 			System.out.println("**************************************************");
+			mainMenu();
 			break;
 		case 2:
 			System.out.println("**************************************************");
@@ -177,12 +194,44 @@ public class Menu {
 				System.out.println("Word Deleted");
 				System.out.println("--------------------------------------------------");
 			}
+			mainMenu();
 			break;
 		case 3:
+			System.out.println("**************************************************");
+			System.out.println("Please choose your option");
+			System.out.println("--------------------------------------------------");
+			System.out.println("1. Search by position");
+			System.out.println("2. Search by word name");
+			int choice2 = GameHandler.getInput(2);
+			if(choice2 == 1) {
+				System.out.println("--------------------------------------------------");
+				System.out.println("Please enter your pos");
+				System.out.println(((Word)wordArr.getAtPos(GameHandler.getInput(wordArr.getIndex()))).toString());
+				System.out.println("--------------------------------------------------");
+			}
+			else {
+				System.out.println("--------------------------------------------------");
+				System.out.println("Please enter your Word");
+				wordArr.delete(in.nextLine().toLowerCase());
+				System.out.println(((Word)(wordArr.getAtPos(wordArr.seqSearch(in.nextLine().toLowerCase())))).toString());
+				System.out.println("--------------------------------------------------");
+			}
+			mainMenu();
 			break;
 		case 4:
+			//Writes File
+			try {
+				writer = new WriteFile();
+				writer.writeArray(wordArr);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			System.out.println("Written to defaultoutput.txt");
+			System.out.println("--------------------------------------------------");
+			mainMenu();
 			break;
 			default:
+				mainMenu();
 		}
 		in.close();
 	}
@@ -207,7 +256,8 @@ public class Menu {
 				System.out.println("Welcome to Hangman Game!");
 				System.out.println("We have chosen a word for you,\ntry to guess one letter at a time");
 				System.out.println("--------------------------------------------------");
-				GameHandler.playMainGame(difficulty, filename);
+				GameHandler.playMainGame(difficulty, wordArr);
+				mainMenu();
 	}
 	
 	public void versusMenu(){
@@ -216,7 +266,8 @@ public class Menu {
 		System.out.println("Welcome to Hangman Game!");
 		System.out.println("We have chosen a word for you,\ntry to guess one letter at a time");
 		System.out.println("--------------------------------------------------");
-		GameHandler.playVersusGame(difficulty, filename);
+		GameHandler.playVersusGame(difficulty, wordArr);
+		mainMenu();
 	
 	}
 	

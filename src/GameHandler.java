@@ -1,5 +1,4 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -15,7 +14,6 @@ import java.io.InputStreamReader;
 
 public class GameHandler {
 	
-	private static ReadFile reader;
 	private static ObjectArray wordArr;
 	private static char userCharInput;
 	private static String userInput;
@@ -26,13 +24,9 @@ public class GameHandler {
 	 * Using pre-built method, the handler minimizes errors when user runs it
 	 */
 	
-	public static void playMainGame(int difficulty, String filename) {
-		try {
-			reader = new ReadFile(filename);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		wordArr = reader.storeObjects();
+	public static void playMainGame(int difficulty, ObjectArrayAdvanced arr) {
+		
+		wordArr = arr;
 		wordArr.sort(); //Stores and sorts the word-list
 		int random = (int) (((difficulty-1)*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
 		Word myWord = ((Word)wordArr.getAtPos(random));
@@ -50,13 +44,9 @@ public class GameHandler {
 	 * Using pre-built method, the handler minimizes errors when user runs it
 	 */
 	
-	public static void playVersusGame(int difficulty, String filename) {
-		try {
-			reader = new ReadFile(filename);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		wordArr = reader.storeObjects();
+	public static void playVersusGame(int difficulty, ObjectArrayAdvanced arr) {
+		
+		wordArr = arr;
 		wordArr.sort();
 		//Stores and sorts the words
 		int random = (int) (((difficulty-1)*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);

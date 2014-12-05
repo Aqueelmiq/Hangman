@@ -34,7 +34,7 @@ public class WriteFile {
 	}
 	
 	//writes the array from first element to the index into output file
-	public void writeArray(ObjectArray objArr){
+	public void writeArray(ObjectArrayAdvanced objArr){
 		for (int i=0; i<objArr.getIndex(); i++){
 			out.println(objArr.toString());
 		}

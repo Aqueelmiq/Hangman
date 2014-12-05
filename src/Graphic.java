@@ -15,18 +15,13 @@ class Graphic extends JComponent {
 
 	private static final long serialVersionUID = 1L;
 	private int num; //stores the state of hang-man
-	private String display; //Stores the guessWord
 	
-	public Graphic(int guess, String display) {
+	public Graphic(int guess) {
 		num = guess;
-		this.display=display;
 	}
 
 public void paint(Graphics g) {
 	
-	//Sets color
-	g.setColor(Color.red);
-	g.drawString(display, 100, 300);
 	//Sets color
 	g.setColor(Color.black);
 	

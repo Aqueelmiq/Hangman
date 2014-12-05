@@ -65,15 +65,14 @@ public class ObjectArrayAdvanced extends ObjectArray{
 		return super.getAtPos(pointer-1);
 	}
 	
-	//To String method
+	//To String method overrides Object Array
 	public String toString(){
-		String myString = null;
-		for(int i=0; i<this.getIndex(); i++){
-			myString += this.getAtPos(i).toString();
-			myString += "\n";
+		String toString = "";
+		for(int i=0; i<super.getIndex(); i++) {
+			toString += ((Word)super.getAtPos(i)).toString();
+			toString += "\n";
 		}
-		myString += "\n index: " + this.getIndex();
-		return myString;
+		return toString;
 	}
 
 }
