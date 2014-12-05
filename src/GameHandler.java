@@ -80,7 +80,7 @@ public class GameHandler {
 			
 			//The below loop ensures that the user presses a valid input
 			while(!flag){
-				System.out.println("Please enter your choice: ");
+				System.out.println("Please enter a number: ");
 				try {
 					userInput = in.readLine();
 				} catch (IOException e1) {
