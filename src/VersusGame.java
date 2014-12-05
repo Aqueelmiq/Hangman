@@ -3,12 +3,13 @@
  * Hangman Game
  * Created by Aqueel Miqdad, Dominik Wegiel
  * Game Class handles the main game functions in the game.
- * It has methods required to play a sub game
+ * It has methods required to play a sub game against computer
  */
 
 import java.util.*;
 
 public class VersusGame extends Game {
+	//usual instance variables but this time for the computer
 	private Word gameWord2;
 	private String guessedWord2, tempWord2;
 	private int guessPos2;
@@ -17,6 +18,7 @@ public class VersusGame extends Game {
 	private int difficulty; //set the frequency for the AI getting a correct letter
 	private char[] computerGuessPool;
 	
+	//Non-default constructor
 	public VersusGame(Word myWord, Word myWord2, int mycategory) {
 		super(myWord, mycategory);
 		setGameWord2(myWord2);
@@ -43,6 +45,7 @@ public class VersusGame extends Game {
 		}
 	}
 	
+	//Non-default Constructor
 	public VersusGame(Word myWord, Word myWord2, int mycategory, int diff) {
 		super(myWord, mycategory);
 		setGameWord2(myWord2);
@@ -59,6 +62,15 @@ public class VersusGame extends Game {
 	
 	public String getTempWord2() {
 		return tempWord2;
+	}
+	
+	//Setters
+	public void getGuessedWord2(String guessedWord2) {
+		this.guessedWord2=guessedWord2;
+	}
+	
+	public void getTempWord2(String tempWord2) {
+		this.tempWord2=tempWord2;
 	}
 	
 	@Override

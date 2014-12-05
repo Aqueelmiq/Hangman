@@ -21,6 +21,11 @@ public class GameHandler {
 	private static String userInput;
 	private static int userInputInt;
 	
+	/*
+	 * The below function handles all the executables of the normal game function.
+	 * Using pre-built method, the handler minimizes errors when user runs it
+	 */
+	
 	public static void playMainGame(int difficulty, String filename) {
 		try {
 			reader = new ReadFile(filename);
@@ -28,17 +33,22 @@ public class GameHandler {
 			e.printStackTrace();
 		}
 		wordArr = reader.storeObjects();
-		wordArr.sort();
+		wordArr.sort(); //Stores and sorts the word-list
 		int random = (int) (((difficulty-1)*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
-		System.out.println(random);
 		Word myWord = ((Word)wordArr.getAtPos(random));
 		Game hangman = new Game(myWord, difficulty);
 		System.out.println(hangman.toString());
+		//Game begins
 		while(!hangman.endGame()) {
 			hangman.guess(getCharInput());
 		
 		}
 	}
+	
+	/*
+	 * The below function handles all the executables of the versus game function.
+	 * Using pre-built method, the handler minimizes errors when user runs it
+	 */
 	
 	public static void playVersusGame(int difficulty, String filename) {
 		try {
@@ -48,17 +58,18 @@ public class GameHandler {
 		}
 		wordArr = reader.storeObjects();
 		wordArr.sort();
+		//Stores and sorts the words
 		int random = (int) (((difficulty-1)*wordArr.getIndex()/3) + Math.random()*wordArr.getIndex()/3);
-		System.out.println(random);
 		Word myWord = ((Word)wordArr.getAtPos(random)), myWord2 = ((Word)wordArr.getAtPos(random+1));
 		VersusGame hangman2 = new VersusGame(myWord, myWord2, difficulty);
 		System.out.println(hangman2.toString());
+		//Game begins
 		while(!hangman2.endGame()) {
 			hangman2.guess(getCharInput());
 		}
 	}
 	
-	//getInput gets a valid input from the user and returns the integer input. 
+		//getInput gets a valid input from the user and returns the integer input. 
 		//(integer limit) is the max limit of the userInput you want, anything more than limit will result in disregarding input.
 		public static int getInput(int limit){
 			//Flag for control loop
@@ -75,8 +86,10 @@ public class GameHandler {
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
+				//Tries to parse it into integer
 				try { 
 			        userInputInt = Integer.parseInt(userInput);
+			        //Checks for invalid integer input
 			        if(userInputInt<=limit)
 			        	flag = true;
 			        else{
@@ -97,6 +110,8 @@ public class GameHandler {
 			return userInputInt;
 		}
 		
+		//getCharInput gets a valid character input from the user and returns the char input.
+		//Tries to avoid invalid inputs.
 		public static char getCharInput() {
 			
 			//Flag for control loop
@@ -114,21 +129,24 @@ public class GameHandler {
 						} catch (IOException e1) {
 							e1.printStackTrace();
 						}
+						//checks if null string entered by user
 						if(userInput.length()>0) {
+							//checks if the letter is an alphabet and not some random character
 							userCharInput = userInput.charAt(0);
 							for(int i=0; i<26; i++) {
 								if(userCharInput == (char)(i+'a')) {
 									flag = true;
 								}
+									
 							}
 						}
+						//asks to try again if the input was invalid
 						if(flag == false) {
 							System.out.println("--------------------------------------------------");
 							System.out.println("That is not a valid input, please try again!");
 							System.out.println("--------------------------------------------------");
-						} 
-					}
-					
+						}	
+				}
 					//returns the valid value after exiting the loop
 					return userCharInput;
 		}

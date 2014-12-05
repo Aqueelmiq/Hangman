@@ -3,6 +3,7 @@ import java.util.Arrays;
 
 	public class ObjectArray {
 		
+		//Instance variable to handle and sort the array
 		private final int MAX = 10000;
 		private Object[] myObject;
 		private int index;
@@ -39,7 +40,7 @@ import java.util.Arrays;
 			}
 			index--;
 			
-		}             //deletes the object at pos and moves all elements up towards 0
+		} //deletes the object at pos and moves all elements up towards 0
 		
 		public void insert(int pos, Object myObj){
 			for(int i=(index-1); i>pos; i--) {
@@ -59,7 +60,7 @@ import java.util.Arrays;
 	    	}
 	    	return myInt;
 	        	   
-	    }        //searches for and returns the index of anObj, -1 if not found
+	    }  //searches for and returns the index of anObj, -1 if not found
 	    
 	    public void delete(Object myObj){
 	    	int pos;
@@ -70,7 +71,7 @@ import java.util.Arrays;
 	    		System.out.println("Object not found");
 	    	}
 	        	   
-	           }   //searches for anObj and deletes if found
+	    } //searches for anObj and deletes if found
 	    
 		public boolean isFull(){
 			if(index==MAX)

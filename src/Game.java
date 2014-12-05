@@ -5,33 +5,36 @@ import javax.swing.JFrame;
  * Hangman Game
  * Created by Aqueel Miqdad, Dominik Wegiel
  * Game Class handles the main game functions in the game.
- * It has methods required to play a sub game
+ * It has methods required to play the normal game
  */
 
 public class Game implements Graphics  {
-
-	private Word gameWord;
-	private int category;
-	protected int guessLimit;
-	protected int guessPos;
-	protected String tempWord;
-	protected String guessedWord;
-	private int pointer;
-	JFrame window;
 	
+	//instance variables to handle game data
+	private Word gameWord; //Stores the word object for manipulation
+	private int category; //Stores the game category
+	protected final int guessLimit = 16; //Maximum Guesses allowed in our Hang-man game
+	protected int guessPos; //Number of incorrect guesses
+	protected String tempWord; //Stores the actual word from word class for manipulation
+	protected String guessedWord; //Stores user's guessed word
+	protected JFrame window;
+	
+	//Non default Constructor to initialize values
 	public Game(Word myWord, int category) {
 		this.gameWord = myWord;
 		this.category = category;
-		this.guessLimit = 15;
 		this.guessPos = 0;
 		this.tempWord = gameWord.getWord().toLowerCase();
-		this.pointer = 0;
+		int pointer = 0;
 		this.guessedWord="";
+		
+		// The below code generates a null word of Xs to start with
 		while(pointer<tempWord.length()) {
 			guessedWord += "X";
 			pointer++;
 			
 		}
+		//Initializes Game window for drawing
 		window = new JFrame();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setBounds(30, 30, 300, 450);
@@ -59,19 +62,30 @@ public class Game implements Graphics  {
 		return tempWord;
 	}
 	
+	//Setters
+	
 	public void setGuessPos(int guess) {
 		this.guessPos = guess;
-	}
-	
-	public void setGuessLimit(int guess) {
-		this.guessLimit = guess;
 	}
 	
 	public void setCategory(int cat) {
 		this.category = cat;
 	}
 	
+	public void setTempWord(String tempWord) {
+		this.tempWord = tempWord;
+	}
+	
+	public void setGuessedWord(String tempWord) {
+		this.guessedWord = tempWord;
+	}
+
+	
 	//Game Methods
+	
+	/*
+	 * Guess method takes in user guess and checks if the guess is right or wrong
+	 */
 	public void guess(char guess) {
 		boolean guessCorrect = false;
 		for(int i=0; i<tempWord.length(); i++){
@@ -88,6 +102,9 @@ public class Game implements Graphics  {
 		drawHangman();
 	}
 	
+	/*
+	 * End game checks if a player has won or lost the game.
+	 */
 	public boolean endGame() {
 		if(guessedWord.compareTo(tempWord)==0) {
 			System.out.println("You Win!");
@@ -101,6 +118,10 @@ public class Game implements Graphics  {
 			return true;
 		}
 	}
+	
+	/*
+	 * Draw Hangman displays the result of current game and also draws the hangman in a window
+	 */
 	
 	@Override
 	public void drawHangman() {
@@ -127,12 +148,5 @@ public class Game implements Graphics  {
 		else
 			return false;
 	}
-
-	@Override
-	public void clearHangman() {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	
 }

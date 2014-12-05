@@ -1,3 +1,10 @@
+/*
+ * CS - 201 Final Project
+ * Hangman Game
+ * Created by Aqueel Miqdad, Dominik Wegiel
+ * Graphic class handles the function to draw a Hang-man as game progresses on the Window
+ */
+ 
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -7,8 +14,8 @@ import javax.swing.JComponent;
 class Graphic extends JComponent {
 
 	private static final long serialVersionUID = 1L;
-	private int num;
-	private String display;
+	private int num; //stores the state of hang-man
+	private String display; //Stores the guessWord
 	
 	public Graphic(int guess, String display) {
 		num = guess;
@@ -17,10 +24,13 @@ class Graphic extends JComponent {
 
 public void paint(Graphics g) {
 	
+	//Sets color
 	g.setColor(Color.red);
 	g.drawString(display, 100, 300);
+	//Sets color
 	g.setColor(Color.black);
 	
+	//Looks at the state of hang-man and draws accordingly
 	switch(num) {
 		case 1:
 			g.drawLine(150, 100, 120, 150); 
